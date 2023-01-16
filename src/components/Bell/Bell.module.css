@@ -1,0 +1,30 @@
+.wrap {
+
+}
+
+.counter {
+    color: #fff;
+    font-size: 9px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 17px;
+    height: 17px;
+
+}
+
+.circle {
+    display: inline-block;
+    background-color: #EA3D5C;
+    width: 17px;
+    height: 17px;
+    border-radius: 50%;
+    position: relative;
+    right: 9px;
+    bottom: 14px;
+    border: 2px solid white;
+    /*font-size: 9px;*/
+    /*text-align: center;*/
+    /*vertical-align: middle;*/
+    /*color: white;*/
+}
