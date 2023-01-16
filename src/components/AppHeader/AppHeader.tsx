@@ -11,7 +11,7 @@ export const AppHeader = () => {
             <span className={s.headerName}>Organization Name</span>
             <span className={s.address}>3892 Feathers Hooves Drive</span>
             <UserPic/>
-            <Bell count={12}/>
+            <Bell count={10}/>
         </div>
     );
 };
