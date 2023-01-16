@@ -11,8 +11,8 @@ export const Bell: React.FC<PropsTypes> = ({count}) => {
         <span className={s.wrap}>
             <BellIcon/>
             {count ?
-                <div className={s.circle}>
-                    <div className={s.counter}>
+                <div className={s.circleWrap}>
+                    <div className={s.circle}>
                         {count}
                     </div>
                 </div>

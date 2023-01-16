@@ -1,17 +1,12 @@
-.counter {
-    color: #fff;
-    font-size: 9px;
-    line-height: 9px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 18px;
-    height: 18px;
-    font-family: Raleway-Bold;
+.circleWrap {
+    display: inline-block;
+    position: relative;
 }
 
 .circle {
-    display: inline-block;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     background-color: #EA3D5C;
     width: 18px;
     height: 18px;
@@ -20,4 +15,7 @@
     right: 10px;
     bottom: 14px;
     border: 2px solid white;
+    font-family: Raleway-Bold;
+    font-size: 9px;
+    color: #fff;
 }
