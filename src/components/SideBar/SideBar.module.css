@@ -1,0 +1,40 @@
+.wrap {
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+    /*border: 1px solid black;*/
+    width: 288px;
+    cursor: pointer;
+    font-family: Raleway-Medium;
+}
+
+.NavBtn {
+    display: flex;
+    align-items: center;
+    /*border: 1px solid black;*/
+    /*width: 282px;*/
+    /*height: 56px;*/
+}
+
+.icon {
+    margin: 0 19px 0 32px;
+}
+
+.iconSelected *{
+    fill: #19A1B7;
+}
+
+.NavBtnWrap {
+    display: flex;
+    align-items: center;
+    /*border: 1px solid black;*/
+    width: 282px;
+    height: 56px;
+}
+
+.selected {
+    background-color: #EFF8FA;
+    border-left: 7px solid #19A1B7;
+    font-family: Raleway-Bold;
+    color: #19A1B7;
+}

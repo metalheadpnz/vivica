@@ -11,10 +11,11 @@ function App() {
         <>
             <AppHeader/>
             <SideBar/>
-            {/*<AppRoutes/>*/}
+            <AppRoutes/>
             {/*<TextInput placeholder={'place holder'}*/}
             {/*           value={value}*/}
             {/*           onChange={(e) => setValue(e.currentTarget.value)}/>*/}
+
         </>
     );
 }

@@ -8,6 +8,11 @@
     src: local('Raleway-Regular'), url(./fonts/Raleway-Regular.ttf) format('truetype');
 }
 
+@font-face {
+    font-family: 'Raleway-Medium';
+    src: local('Raleway-Medium'), url(./fonts/Raleway-Medium.ttf) format('truetype');
+}
+
 * {
     font-variant-numeric: lining-nums;
     -moz-font-feature-settings: "lnum" 1;
