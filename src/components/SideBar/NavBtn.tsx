@@ -11,10 +11,15 @@ type PropsTypes = {
 export const NavBtn: React.FC<any> = ({data, onClick, selected, index}) => {
     const {title, route} = data
     return (
-        <NavLink to={route}>
-            <div onClick={() => onClick(index)} className={`${s.NavBtnWrap} ${selected ? s.selected : ''}`}>
+        <NavLink to={route}
+                 className={({ isActive }) =>
+                     isActive ? s.selected : undefined
+                 }
+                 >
+            {/*<div onClick={() => onClick(index)} className={`${s.NavBtnWrap} ${selected ? s.selected : ''}`}>*/}
+            <div onClick={() => onClick(index)} className={`${s.NavBtnWrap}`}>
                 <div className={s.NavBtn}>
-                    <data.icon className={`${s.icon} ${selected ? s.iconSelected : ''}`}/>
+                    <data.icon className={`${s.icon}`}/>
                     <span>{title}</span>
                 </div>
             </div>

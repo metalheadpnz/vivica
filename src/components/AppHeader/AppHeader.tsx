@@ -7,11 +7,17 @@ import {Bell} from "../Bell/Bell";
 export const AppHeader = () => {
     return (
         <div className={s.wrap}>
-            <Logo/>
-            <span className={s.headerName}>Organization Name</span>
-            <span className={s.address}>3892 Feathers Hooves Drive</span>
-            <UserPic/>
-            <Bell count={12}/>
+            <Logo className={s.logo}/>
+
+            <div className={s.info}>
+                <span className={s.headerName}>Organization Name</span>
+                <span className={s.address}>3892 Feathers Hooves Drive</span>
+
+                <UserPic/>
+                <div>
+                    <Bell />
+                </div>
+            </div>
         </div>
     );
 };

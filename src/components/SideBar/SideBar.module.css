@@ -38,3 +38,11 @@
     font-family: Raleway-Bold;
     color: #19A1B7;
 }
+
+.selected svg * {
+    fill: #19A1B7;
+}
+
+.test{
+
+}

@@ -1,14 +1,28 @@
-
-
 .wrap {
     height: 60px;
+    border-bottom: 1px solid #DFF2F5;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo{
+    margin-left: 36px;
+}
+
+.info{
+    display: flex;
+    align-items: center;
+    margin-right: 36px;
 }
 
 .headerName {
     font-family: Raleway-Bold;
+    margin-right: 12px;
 }
 
 .address {
     font-family: Raleway-Regular;
+    margin-right: 37px;
 
 }
