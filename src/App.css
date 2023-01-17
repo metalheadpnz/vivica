@@ -7,3 +7,13 @@
     font-family: 'Raleway-Regular';
     src: local('Raleway-Regular'), url(./fonts/Raleway-Regular.ttf) format('truetype');
 }
+
+* {
+    font-variant-numeric: lining-nums;
+    -moz-font-feature-settings: "lnum" 1;
+    -moz-font-feature-settings: "lnum=1";
+    -ms-font-feature-settings: "lnum" 1;
+    -o-font-feature-settings: "lnum" 1;
+    -webkit-font-feature-settings: "lnum" 1;
+    font-feature-settings: "lnum" 1;
+}

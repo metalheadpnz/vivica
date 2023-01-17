@@ -6,16 +6,15 @@ import {SideBar} from "./components/SideBar/SideBar";
 import {TextInput} from "./components/TextInput/TextInput";
 
 function App() {
-    const [value, setValue] = useState<string>('')
+    // const [value, setValue] = useState<string>('')
     return (
         <>
-            {/*<AppHeader/>*/}
-            {/*<SideBar/>*/}
+            <AppHeader/>
+            <SideBar/>
             {/*<AppRoutes/>*/}
-            <TextInput placeholder={'place holder'}
-                       inputValue={value}
-                       onChangeText={setValue}/>
-
+            {/*<TextInput placeholder={'place holder'}*/}
+            {/*           value={value}*/}
+            {/*           onChange={(e) => setValue(e.currentTarget.value)}/>*/}
         </>
     );
 }
