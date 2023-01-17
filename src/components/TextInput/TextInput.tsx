@@ -1,4 +1,4 @@
-import React, {ChangeEvent, useState} from 'react';
+import React, {ChangeEvent} from 'react';
 import s from './TextInput.module.css'
 
 type PropsTypes = {
@@ -6,7 +6,7 @@ type PropsTypes = {
     inputValue: string
     onChange?: (e: ChangeEvent<HTMLInputElement>) => void
     onChangeText: (text: string) => void
-}
+} & React.InputHTMLAttributes<HTMLInputElement>
 
 export const TextInput: React.FC<PropsTypes> = (
     {

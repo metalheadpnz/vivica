@@ -39,10 +39,10 @@ label,
 }
 
 .formField:focus ~ .formLabel {
-    color: #009788;
+    color: #19A1B7;
 }
 
 .formField:focus {
     padding-bottom: 6px;
-    border-bottom: 2px solid #009788;
+    border-bottom: 2px solid #19A1B7;
 }
