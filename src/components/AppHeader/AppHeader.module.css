@@ -16,13 +16,18 @@
     margin-right: 36px;
 }
 
+.userPic{
+    margin-right: 32px;
+}
+
 .headerName {
     font-family: Raleway-Bold;
     margin-right: 12px;
+    color: #4B5563;
 }
 
 .address {
     font-family: Raleway-Regular;
     margin-right: 37px;
-
+    color: #4B5563;
 }

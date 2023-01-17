@@ -1,10 +1,12 @@
-import React, {useEffect, useLayoutEffect, useState} from 'react';
+import React from 'react';
 import s from './SideBar.module.css'
 import {NavBtn} from "./NavBtn";
 import {ReactComponent as Dashboard} from "../../assets/images/Dashboard.svg"
 import {ReactComponent as Patients} from "../../assets/images/Patients.svg"
 import {ReactComponent as Results} from "../../assets/images/Results.svg"
-import {useLocation} from "react-router-dom";
+import {ReactComponent as SampleReception} from "../../assets/images/sampleReception.svg"
+import {ReactComponent as Archive} from "../../assets/images/Archive.svg"
+import {SmallBtn} from "./SmallBtn";
 
 const sideMenu = [
     {title: 'Dashboard', icon: Dashboard, route: 'dashboard'},
@@ -12,32 +14,19 @@ const sideMenu = [
     {title: 'Results', icon: Results, route: 'results'},
 ]
 
-const getIndex = (pathname: string) => sideMenu.findIndex(el => pathname.includes(el.route))
+const smallSideMenu = [
+    {icon: SampleReception},
+    {icon: Results},
+    {icon: Archive},
+]
 
-export const SideBar = () => {
-    console.log('render')
-    let {pathname} = useLocation();
-
-    const [selectedIndex, setSelectedIndex] = useState<number>(getIndex(pathname))
-
-    // useEffect(() => {
-    //     console.log('effect')
-    //     setSelectedIndex(getIndex(pathname))
-    // }, [pathname])
-
-    const onBtnClickHandler = (index: number) => {
-        setSelectedIndex(index)
-    }
-
-    return (
-        <div className={s.wrap}>
-            {sideMenu.map((el, index) =>
-                <NavBtn data={el}
-                        selected={index === selectedIndex}
-                        index={index}
-                        onClick={onBtnClickHandler}
-                        key={el.title}/>)
-            }
+export const SideBar = () =>
+    <>
+        {/*<div className={s.wrap}>*/}
+        {/*    {sideMenu.map(el => <NavBtn data={el} key={el.title}/>)}*/}
+        {/*</div>*/}
+        <div className={s.smallWrap}>
+            {/*{smallSideMenu.map(el => <div className={s.smallBtn}><el.icon/></div>)}*/}
+            {smallSideMenu.map(el => <SmallBtn icon={el.icon}/>)}
         </div>
-    );
-};
+    </>

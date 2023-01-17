@@ -20,7 +20,7 @@
     margin: 0 19px 0 32px;
 }
 
-.iconSelected *{
+.iconSelected * {
     fill: #19A1B7;
 }
 
@@ -43,6 +43,23 @@
     fill: #19A1B7;
 }
 
-.test{
+.smallWrap {
+    width: 64px;
+    /*height: 100vh;*/
+    /*flex-grow: 1;*/
+    /*border: 1px solid black;*/
+}
 
+.smallBtn{
+    width: 64px;
+    height: 64px;
+    background-color: #19A1B7;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /*border: 1px solid black;*/
+}
+
+.whiteIcon *{
+    fill: white;
 }
