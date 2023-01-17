@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import s from './SideBar.module.css'
 import {NavBtn} from "./NavBtn";
 import {ReactComponent as Dashboard} from "../../assets/images/Dashboard.svg"
@@ -16,13 +16,19 @@ const sideMenu = [
 ]
 
 
-export const SideBar = () =>
-    <>
-        <div className={s.wrap}>
-            {sideMenu.map(el => <NavBtn data={el} key={el.title}/>)}
-            <div className={s.arrows}>Hide panel<Arrows/></div>
-        </div>
-        <div className={s.smallWrap}>
-            {sideMenu.map(el => <SmallBtn data={el} key={el.title}/>)}
-        </div>
-    </>
+export const SideBar: React.FC<any> = ({collapsed, setCollapsed}) => {
+    return (
+        <>
+            <div className={`${s.wrap} ${collapsed ? s.collapsed : s.unCollapsed}`}>
+
+                {sideMenu.map(el => <NavBtn data={el} key={el.title}/>)}
+                <div className={s.arrows} onClick={() => setCollapsed(true)}>Hide panel<Arrows/></div>
+            </div>
+            <div className={`${s.smallWrap} ${collapsed ? s.unCollapsed : s.collapsed}`}>
+                {sideMenu.map(el => <SmallBtn data={el} key={el.title}/>)}
+                <div className={s.smallPanelArrows} onClick={() => setCollapsed(false)}><Arrows/></div>
+            </div>
+
+        </>
+    )
+}

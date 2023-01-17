@@ -1,0 +1,15 @@
+.wrap {
+    border: 1px solid black;
+    position: relative;
+    transition: 0.4s;
+    translate: 0;
+
+}
+
+.collapsed {
+    right: 288px;
+}
+
+.unCollapsed {
+    right: 64px;
+}

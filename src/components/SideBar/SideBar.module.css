@@ -46,12 +46,16 @@
 .smallWrap {
     width: 64px;
     background-color: #19A1B7;
+    position: relative;
+    right: 288px;
+    display: flex;
+    flex-direction: column;
     /*height: 100vh;*/
     /*flex-grow: 1;*/
     /*border: 1px solid black;*/
 }
 
-.smallBtn{
+.smallBtn {
     width: 64px;
     height: 64px;
     background-color: #19A1B7;
@@ -61,15 +65,15 @@
     /*border: 1px solid black;*/
 }
 
-.whiteIcon *{
+.whiteIcon * {
     fill: white;
 }
 
-.smallSelected div{
+.smallSelected div {
     background-color: #007287;
 }
 
-.arrows{
+.arrows {
     display: flex;
     color: #19A1B7;
     margin: auto 15px 18px;
@@ -78,4 +82,26 @@
 
 .arrows * {
     margin-left: 15px;
+}
+
+.collapsed {
+    transition: 0.4s;
+    translate: -100% 0;
+}
+
+.unCollapsed {
+    transition: 0.4s;
+}
+
+.smallPanelArrows {
+    display: flex;
+    height: 64px;
+    justify-content: center;
+    align-items: center;
+    margin-top: auto;
+    /*background-color: red;*/
+}
+
+.smallPanelArrows * {
+    fill: #fff;
 }
