@@ -8,7 +8,7 @@ function App() {
     return (
         <>
             <AppHeader/>
-            <div style={{display: "flex", flexDirection: 'column'}}>
+            <div className='wrap_app'>
                 <SideBar/>
             </div>
             {/*<AppRoutes/>*/}

@@ -1,10 +1,17 @@
 import React from 'react';
 import s from "./SideBar.module.css";
+import {NavLink} from "react-router-dom";
 
-export const SmallBtn = (props: any) => {
+export const SmallBtn: React.FC<any> = ({data}) => {
     return (
-        <div className={s.smallBtn}>
-            <props.icon className={s.whiteIcon}/>
-        </div>
+        <NavLink to={data.route}
+                 className={({isActive}) =>
+                     isActive ? s.smallSelected : undefined
+                 }
+        >
+            <div className={s.smallBtn}>
+                <data.icon className={s.whiteIcon}/>
+            </div>
+        </NavLink>
     );
 }

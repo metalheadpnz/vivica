@@ -1,24 +1,5 @@
-@font-face {
-    font-family: 'Raleway-Bold';
-    src: local('Raleway-Bold'), url(./fonts/Raleway-Bold.ttf) format('truetype');
-}
-
-@font-face {
-    font-family: 'Raleway-Regular';
-    src: local('Raleway-Regular'), url(./fonts/Raleway-Regular.ttf) format('truetype');
-}
-
-@font-face {
-    font-family: 'Raleway-Medium';
-    src: local('Raleway-Medium'), url(./fonts/Raleway-Medium.ttf) format('truetype');
-}
-
-* {
-    font-variant-numeric: lining-nums;
-    -moz-font-feature-settings: "lnum" 1;
-    -moz-font-feature-settings: "lnum=1";
-    -ms-font-feature-settings: "lnum" 1;
-    -o-font-feature-settings: "lnum" 1;
-    -webkit-font-feature-settings: "lnum" 1;
-    font-feature-settings: "lnum" 1;
+.wrap_app {
+    /*background-color: #fdd;*/
+    height: calc(100vh - 61px);
+    display: flex;
 }

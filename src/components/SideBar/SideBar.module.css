@@ -29,7 +29,7 @@
     align-items: center;
     /*border: 1px solid black;*/
     width: 282px;
-    height: 56px;
+    height: 64px;
 }
 
 .selected {
@@ -45,6 +45,7 @@
 
 .smallWrap {
     width: 64px;
+    background-color: #19A1B7;
     /*height: 100vh;*/
     /*flex-grow: 1;*/
     /*border: 1px solid black;*/
@@ -62,4 +63,19 @@
 
 .whiteIcon *{
     fill: white;
+}
+
+.smallSelected div{
+    background-color: #007287;
+}
+
+.arrows{
+    display: flex;
+    color: #19A1B7;
+    margin: auto 15px 18px;
+    /*border: 1px solid black;*/
+}
+
+.arrows * {
+    margin-left: 15px;
 }
