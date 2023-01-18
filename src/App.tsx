@@ -1,12 +1,19 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import './App.css';
-import {AppRoutes} from "./routes/AppRoutes";
 import {AppHeader} from "./components/AppHeader/AppHeader";
 import {SideBar} from "./components/SideBar/SideBar";
 import {MainContent} from "./components/MainContent/MainContent";
 
 function App() {
     const [collapsed, setCollapsed] = useState<boolean>(false)
+
+    useEffect(() => {
+        const string = localStorage.getItem('collapsedMenu')
+        const collapsedLS = (string !== null) && JSON.parse(string)
+        setCollapsed(collapsedLS)
+    }, [])
+
+
     return (
         <>
             <AppHeader/>

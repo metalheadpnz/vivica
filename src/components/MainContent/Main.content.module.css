@@ -1,15 +1,17 @@
 .wrap {
-    border: 1px solid black;
-    position: relative;
+    /*border: 1px solid black;*/
+    position: absolute;
     transition: 0.4s;
     translate: 0;
-
+    height: calc(100% - 64px);
 }
 
 .collapsed {
-    right: 288px;
+    left: 64px;
+    width: calc(100% - 66px);
 }
 
 .unCollapsed {
-    right: 64px;
+    left: 288px;
+    width: calc(100% - 290px);
 }
