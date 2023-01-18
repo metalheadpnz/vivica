@@ -44,6 +44,11 @@ button {
     src: local('Raleway-Medium'), url(./fonts/Raleway-Medium.ttf) format('truetype');
 }
 
+@font-face {
+    font-family: 'Raleway-Light';
+    src: local('Raleway-Light'), url(./fonts/Raleway-Light.ttf) format('truetype');
+}
+
 * {
     font-variant-numeric: lining-nums;
     -moz-font-feature-settings: "lnum" 1;

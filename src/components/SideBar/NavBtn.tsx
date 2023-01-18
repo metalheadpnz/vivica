@@ -8,21 +8,23 @@ type PropsTypes = {
     selected?: boolean
 }
 
-export const NavBtn: React.FC<any> = ({data}) => {
+export const NavBtn: React.FC<any> = ({data, collapsed}) => {
     const {title, route} = data
     return (
         <NavLink to={route}
                  className={({isActive}) =>
-                     isActive ? s.selected : s.unSelected
+                     collapsed
+                         ? isActive ? s.selectedSmall : s.unSelectedSmall
+                         : isActive ? s.selected : s.unSelected
                  }
         >
-            <div className={`${s.NavBtnWrap}`}>
-                {/*<div className={s.NavBtn}>*/}
-                    <div>
-                        <data.icon className={`${s.icon}`}/>
-                    </div>
-                    <span>{title}</span>
-                {/*</div>*/}
+            <div className={s.NavBtnWrap}>
+                <div className={s.iconWrap}>
+                    <data.icon className={s.icon}/>
+                </div>
+                <span>
+                    {title}
+                </span>
             </div>
         </NavLink>
     );

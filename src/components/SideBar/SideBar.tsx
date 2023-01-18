@@ -24,21 +24,12 @@ export const SideBar: React.FC<PropsType> = ({collapsed, setCollapsed}) => {
         localStorage.setItem('collapsedMenu', JSON.stringify(state))
     }
     return (
-        <>
-            {/*<div className={`${s.wrap} ${collapsed ? s.collapsed : s.unCollapsed}`}>*/}
-
-            {/*    {sideMenu.map(el => <NavBtn data={el} key={el.title}/>)}*/}
-            {/*    <div className={s.arrows} onClick={() => collapsedMenu(!collapsed)}>Hide panel<Arrows/></div>*/}
-            {/*</div>*/}
-            <div className={`${s.sidebarWrap} ${collapsed ? s.collapsed : ''}`}>
-                {sideMenu.map(el => <NavBtn data={el} key={el.title}/>)}
-                <Arrows onClick={() => collapsedMenu(!collapsed)}/>
+        <div className={`${s.sidebarWrap} ${collapsed ? s.collapsed : s.unCollapsed}`}>
+            {sideMenu.map(el => <NavBtn data={el} key={el.title} collapsed={collapsed}/>)}
+            <div className={s.arrows} onClick={() => collapsedMenu(!collapsed)}>
+                {!collapsed && <span>Hide panel</span>}
+                <Arrows/>
             </div>
-
-            {/*<div className={`${s.smallWrap} ${collapsed ? s.unCollapsed : s.collapsed}`}>*/}
-            {/*    {sideMenu.map(el => <SmallBtn data={el} key={el.title}/>)}*/}
-            {/*    <div className={s.smallPanelArrows} onClick={() => collapsedMenu(false)}><Arrows/></div>*/}
-            {/*</div>*/}
-        </>
+        </div>
     )
 }
