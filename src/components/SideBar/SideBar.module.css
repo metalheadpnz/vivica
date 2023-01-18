@@ -1,107 +1,149 @@
-.wrap {
+/*.wrap {*/
+/*    display: flex;*/
+/*    flex-direction: column;*/
+/*    align-items: end;*/
+/*    border: 1px solid black;*/
+/*    !*width: 288px;*!*/
+/*    cursor: pointer;*/
+/*    font-family: Raleway-Medium;*/
+/*}*/
+
+/*.NavBtn {*/
+/*    display: flex;*/
+/*    align-items: center;*/
+/*    !*border: 1px solid black;*!*/
+/*    !*width: 282px;*!*/
+/*    !*height: 56px;*!*/
+/*}*/
+
+/*.icon {*/
+/*    margin: 0 19px 0 32px;*/
+/*}*/
+
+/*.iconSelected * {*/
+/*    fill: #19A1B7;*/
+/*}*/
+
+/*.NavBtnWrap {*/
+/*    display: flex;*/
+/*    align-items: center;*/
+/*    !*border: 1px solid black;*!*/
+/*    width: 282px;*/
+/*    height: 64px;*/
+/*}*/
+
+/*.selected {*/
+/*    background-color: #EFF8FA;*/
+/*    border-left: 7px solid #19A1B7;*/
+/*    font-family: Raleway-Bold;*/
+/*    color: #19A1B7;*/
+/*}*/
+
+/*.selected svg * {*/
+/*    fill: #19A1B7;*/
+/*}*/
+
+/*.smallWrap {*/
+/*    width: 64px;*/
+/*    background-color: #19A1B7;*/
+/*    !*position: relative;*!*/
+/*    !*right: 288px;*!*/
+/*    display: flex;*/
+/*    flex-direction: column;*/
+/*    !*height: 100vh;*!*/
+/*    !*flex-grow: 1;*!*/
+/*    !*border: 1px solid black;*!*/
+/*}*/
+
+/*.smallBtn {*/
+/*    width: 64px;*/
+/*    height: 64px;*/
+/*    background-color: #19A1B7;*/
+/*    display: flex;*/
+/*    align-items: center;*/
+/*    justify-content: center;*/
+/*    !*border: 1px solid black;*!*/
+/*}*/
+
+/*.whiteIcon * {*/
+/*    fill: white;*/
+/*}*/
+
+/*.smallSelected div {*/
+/*    background-color: #007287;*/
+/*}*/
+
+/*.arrows {*/
+/*    display: flex;*/
+/*    color: #19A1B7;*/
+/*    margin: auto 15px 18px;*/
+/*    !*border: 1px solid black;*!*/
+/*}*/
+
+/*.arrows * {*/
+/*    margin-left: 15px;*/
+/*}*/
+
+/*.collapsed {*/
+/*    width: 99px;*/
+/*    !*background-color: red;*!*/
+/*    transition: 0.4s;*/
+
+/*}*/
+
+/*.unCollapsed {*/
+/*    !*background-color: white;*!*/
+/*    transition: 0.4s;*/
+/*}*/
+
+/*.smallPanelArrows {*/
+/*    display: flex;*/
+/*    height: 64px;*/
+/*    justify-content: center;*/
+/*    align-items: center;*/
+/*    margin-top: auto;*/
+/*    !*background-color: red;*!*/
+/*}*/
+
+/*.smallPanelArrows * {*/
+/*    fill: #fff;*/
+/*}*/
+
+.sidebarWrap {
+    width: 288px;
+    /*border: 5px solid black;*/
+    transition: 0.4s;
     display: flex;
     flex-direction: column;
-    align-items: end;
-    /*border: 1px solid black;*/
-    width: 288px;
-    cursor: pointer;
-    font-family: Raleway-Medium;
+    overflow: hidden;
+    flex-shrink: 0;
 }
 
-.NavBtn {
-    display: flex;
-    align-items: center;
-    /*border: 1px solid black;*/
-    /*width: 282px;*/
-    /*height: 56px;*/
-}
-
-.icon {
-    margin: 0 19px 0 32px;
-}
-
-.iconSelected * {
-    fill: #19A1B7;
+.collapsed {
+    width: 60px;
+    background-color: #19A1B7;
 }
 
 .NavBtnWrap {
+    width: 282px;
+
     display: flex;
     align-items: center;
-    /*border: 1px solid black;*/
-    width: 282px;
+    justify-content: center;
+    flex-direction: row;
+
     height: 64px;
+    cursor: pointer;
+    font-family: Raleway-Medium;
+    /*border: 1px dashed green;*/
+    /*border-left: 7px solid*/
 }
 
 .selected {
     background-color: #EFF8FA;
     border-left: 7px solid #19A1B7;
-    font-family: Raleway-Bold;
-    color: #19A1B7;
 }
 
-.selected svg * {
-    fill: #19A1B7;
-}
-
-.smallWrap {
-    width: 64px;
-    background-color: #19A1B7;
-    position: relative;
-    right: 288px;
-    display: flex;
-    flex-direction: column;
-    /*height: 100vh;*/
-    /*flex-grow: 1;*/
-    /*border: 1px solid black;*/
-}
-
-.smallBtn {
-    width: 64px;
-    height: 64px;
-    background-color: #19A1B7;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    /*border: 1px solid black;*/
-}
-
-.whiteIcon * {
-    fill: white;
-}
-
-.smallSelected div {
-    background-color: #007287;
-}
-
-.arrows {
-    display: flex;
-    color: #19A1B7;
-    margin: auto 15px 18px;
-    /*border: 1px solid black;*/
-}
-
-.arrows * {
-    margin-left: 15px;
-}
-
-.collapsed {
-    transition: 0.4s;
-    translate: -100% 0;
-}
-
-.unCollapsed {
-    transition: 0.4s;
-}
-
-.smallPanelArrows {
-    display: flex;
-    height: 64px;
-    justify-content: center;
-    align-items: center;
-    margin-top: auto;
-    /*background-color: red;*/
-}
-
-.smallPanelArrows * {
-    fill: #fff;
+.unSelected {
+    border-left: 7px solid white;
 }

@@ -13,14 +13,16 @@ export const NavBtn: React.FC<any> = ({data}) => {
     return (
         <NavLink to={route}
                  className={({isActive}) =>
-                     isActive ? s.selected : undefined
+                     isActive ? s.selected : s.unSelected
                  }
         >
             <div className={`${s.NavBtnWrap}`}>
-                <div className={s.NavBtn}>
-                    <data.icon className={`${s.icon}`}/>
+                {/*<div className={s.NavBtn}>*/}
+                    <div>
+                        <data.icon className={`${s.icon}`}/>
+                    </div>
                     <span>{title}</span>
-                </div>
+                {/*</div>*/}
             </div>
         </NavLink>
     );

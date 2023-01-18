@@ -5,8 +5,6 @@ import {ReactComponent as Dashboard} from "../../assets/images/Dashboard.svg"
 import {ReactComponent as Patients} from "../../assets/images/Patients.svg"
 import {ReactComponent as Results} from "../../assets/images/Results.svg"
 import {ReactComponent as Arrows} from "../../assets/images/Arrows2ways.svg"
-import {ReactComponent as SampleReception} from "../../assets/images/sampleReception.svg"
-import {ReactComponent as Archive} from "../../assets/images/Archive.svg"
 import {SmallBtn} from "./SmallBtn";
 
 const sideMenu = [
@@ -25,18 +23,22 @@ export const SideBar: React.FC<PropsType> = ({collapsed, setCollapsed}) => {
         setCollapsed(state)
         localStorage.setItem('collapsedMenu', JSON.stringify(state))
     }
-
     return (
         <>
-            <div className={`${s.wrap} ${collapsed ? s.collapsed : s.unCollapsed}`}>
+            {/*<div className={`${s.wrap} ${collapsed ? s.collapsed : s.unCollapsed}`}>*/}
 
+            {/*    {sideMenu.map(el => <NavBtn data={el} key={el.title}/>)}*/}
+            {/*    <div className={s.arrows} onClick={() => collapsedMenu(!collapsed)}>Hide panel<Arrows/></div>*/}
+            {/*</div>*/}
+            <div className={`${s.sidebarWrap} ${collapsed ? s.collapsed : ''}`}>
                 {sideMenu.map(el => <NavBtn data={el} key={el.title}/>)}
-                <div className={s.arrows} onClick={() => collapsedMenu (true)}>Hide panel<Arrows/></div>
+                <Arrows onClick={() => collapsedMenu(!collapsed)}/>
             </div>
-            <div className={`${s.smallWrap} ${collapsed ? s.unCollapsed : s.collapsed}`}>
-                {sideMenu.map(el => <SmallBtn data={el} key={el.title}/>)}
-                <div className={s.smallPanelArrows} onClick={() => collapsedMenu(false)}><Arrows/></div>
-            </div>
+
+            {/*<div className={`${s.smallWrap} ${collapsed ? s.unCollapsed : s.collapsed}`}>*/}
+            {/*    {sideMenu.map(el => <SmallBtn data={el} key={el.title}/>)}*/}
+            {/*    <div className={s.smallPanelArrows} onClick={() => collapsedMenu(false)}><Arrows/></div>*/}
+            {/*</div>*/}
         </>
     )
 }
