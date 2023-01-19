@@ -6,15 +6,16 @@
 
 .row {
   display: flex;
-  flex-grow: 1;
-
+  height: calc(50% - 96px);
+  margin-left: 36px;
 }
 
 .card {
   border: 1px dashed rebeccapurple;
   flex-grow: 1;
-  margin: 36px;
+  margin: 0 36px 36px 0;
   min-width: 200px;
+  background-color: #fff;
 }
 
 .header {
@@ -22,4 +23,15 @@
   border: 1px dashed red;
   height: 60px;
   align-items: center;
+  margin: 36px;
+
+  display: flex;
+}
+
+.left{
+
+}
+
+.right{
+
 }

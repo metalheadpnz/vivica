@@ -1,6 +1,7 @@
 import React from 'react';
 import s from './Dashboard.module.scss'
 import {DashBoardsCard} from "./components/DashBoardCard/DashBoardsCard";
+import {DashboardHeader} from "./components/DashBoardCard/DashboardHeader";
 
 const cards: DashBoardsCard[] = [
     {
@@ -41,17 +42,7 @@ export const Dashboard = () => {
     return (
 
         <div className={s.wrap}>
-            <div className={s.header}>
-                <div>
-                    <span>Hello, </span>
-                    <span>David Johnson</span>
-                </div>
-                <div>
-                    <select name="date" id="">date</select>
-                    <span>09:30</span>
-                    <span>Monday</span>
-                </div>
-            </div>
+            <DashboardHeader/>
             <div className={s.row}>
                 <div className={s.card}></div>
                 <div className={s.card}></div>
