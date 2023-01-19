@@ -2,6 +2,7 @@ import React from 'react';
 import s from './Dashboard.module.scss'
 import {DashBoardsCard} from "./components/DashBoardCard/DashBoardsCard";
 import {DashboardHeader} from "./components/DashBoardCard/DashboardHeader";
+import {DashboardCard} from "./components/DashboardCard";
 
 const cards: DashBoardsCard[] = [
     {
@@ -40,16 +41,15 @@ const cards: DashBoardsCard[] = [
 
 export const Dashboard = () => {
     return (
-
         <div className={s.wrap}>
             <DashboardHeader/>
             <div className={s.row}>
-                <div className={s.card}></div>
-                <div className={s.card}></div>
+                <DashboardCard/>
+                <DashboardCard/>
             </div>
             <div className={s.row}>
-                <div className={s.card}></div>
-                <div className={s.card}></div>
+                <DashboardCard/>
+                <DashboardCard/>
             </div>
         </div>
     );
