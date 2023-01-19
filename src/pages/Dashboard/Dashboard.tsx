@@ -1,6 +1,6 @@
 import React from 'react';
-import s from './Dashboard.module.css'
-import {DashBoardsCard} from "../../components/DashBoardCard/DashBoardsCard";
+import s from './Dashboard.module.scss'
+import {DashBoardsCard} from "./components/DashBoardCard/DashBoardsCard";
 
 const cards: DashBoardsCard[] = [
     {
@@ -39,11 +39,27 @@ const cards: DashBoardsCard[] = [
 
 export const Dashboard = () => {
     return (
+
         <div className={s.wrap}>
-            <div className={s.header}>header</div>
-            <div className={s.content}>
-                {cards.map((card, index) => <DashBoardsCard card={card} key={index}/>)}
+            <div className={s.header}>
+                <div>
+                    <span>Hello, </span>
+                    <span>David Johnson</span>
+                </div>
+                <div>
+                    <select name="date" id="">date</select>
+                    <span>09:30</span>
+                    <span>Monday</span>
+                </div>
+            </div>
+            <div className={s.row}>
+                <div className={s.card}></div>
+                <div className={s.card}></div>
+            </div>
+            <div className={s.row}>
+                <div className={s.card}></div>
+                <div className={s.card}></div>
             </div>
         </div>
     );
-};
+}

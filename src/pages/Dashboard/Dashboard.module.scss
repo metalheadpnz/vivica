@@ -1,0 +1,25 @@
+.wrap {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.row {
+  display: flex;
+  flex-grow: 1;
+
+}
+
+.card {
+  border: 1px dashed rebeccapurple;
+  flex-grow: 1;
+  margin: 36px;
+  min-width: 200px;
+}
+
+.header {
+  display: flex;
+  border: 1px dashed red;
+  height: 60px;
+  align-items: center;
+}

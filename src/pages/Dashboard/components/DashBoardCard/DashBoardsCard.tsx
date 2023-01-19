@@ -1,5 +1,5 @@
 import React from 'react';
-import s from './DashBoardCard.module.css'
+import s from './DashBoardCard.module.scss'
 
 export type DashBoardsCard = {
     title: string

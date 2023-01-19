@@ -31,22 +31,22 @@ button {
 
 @font-face {
     font-family: 'Raleway-Bold';
-    src: local('Raleway-Bold'), url(./fonts/Raleway-Bold.ttf) format('truetype');
+    src: local('Raleway-Bold'), url(assets/fonts/Raleway-Bold.ttf) format('truetype');
 }
 
 @font-face {
     font-family: 'Raleway-Regular';
-    src: local('Raleway-Regular'), url(./fonts/Raleway-Regular.ttf) format('truetype');
+    src: local('Raleway-Regular'), url(assets/fonts/Raleway-Regular.ttf) format('truetype');
 }
 
 @font-face {
     font-family: 'Raleway-Medium';
-    src: local('Raleway-Medium'), url(./fonts/Raleway-Medium.ttf) format('truetype');
+    src: local('Raleway-Medium'), url(assets/fonts/Raleway-Medium.ttf) format('truetype');
 }
 
 @font-face {
     font-family: 'Raleway-Light';
-    src: local('Raleway-Light'), url(./fonts/Raleway-Light.ttf) format('truetype');
+    src: local('Raleway-Light'), url(assets/fonts/Raleway-Light.ttf) format('truetype');
 }
 
 * {
