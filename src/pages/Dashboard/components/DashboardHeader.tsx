@@ -1,6 +1,9 @@
 import React from 'react';
-import s from "../../Dashboard.module.scss";
-import {Select} from "../../../../components/Select/Select";
+import s from "../Dashboard.module.scss";
+import {Select} from "../../../components/Select/Select";
+import {Clock} from "./Clock";
+
+const options = [{name: ' Last 30 days'}, {name: 'Last 60 days'}, {name: ' Last 90 days'}]
 
 export const DashboardHeader = () => {
     return (
@@ -11,11 +14,10 @@ export const DashboardHeader = () => {
             </div>
             <div className={s.right}>
                 <Select title={'Date interval'}
-                        options={[{name: ' Last 30 days'}, {name: 'Last 60 days'}, {name: ' Last 90 days'}]}/>
-                <div className={s.clock}>
-                    <span>09:30</span>
-                    <span>Monday</span>
-                </div>
+                        options={options}
+                        // callBack={(option) => console.log(option)}
+                />
+                <Clock/>
             </div>
         </div>
     );

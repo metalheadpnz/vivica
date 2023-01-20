@@ -7,25 +7,29 @@ type PropsTypes = {
     options: Array<{
         name: string
     }>
+    callBack?: (option: string) => void
 }
 
-export const Select: React.FC<PropsTypes> = ({title, options}) => {
+export const Select: React.FC<PropsTypes> = ({title, options, callBack}) => {
     const [isOpen, setIsOpen] = useState<boolean>(false)
     const [value, setValue] = useState<string>(options[0].name)
 
     const clickHandler = (e: React.BaseSyntheticEvent) => {
-        setValue(e.target.innerText)
+        const option = e.target.innerText
+        setValue(option)
+        callBack && callBack(option)
         setIsOpen(false)
     }
 
     return (
         <div className={s.wrap}>
             <div className={s.title}>{title}</div>
-            <div className={s.currentOption} onClick={() => setIsOpen(!isOpen)}>{value} <Arrow className={`${s.arrow} ${isOpen?s.reversed:''}` }/></div>
+            <div className={s.currentOption} onClick={() => setIsOpen(!isOpen)}>{value} <Arrow
+                className={`${s.arrow} ${isOpen ? s.reversed : ''}`}/></div>
             {isOpen && <div className={s.optionsContainer}>
-                {options.map((options, index) => <div key={options.name}
-                                                      className={s.option}
-                                                      onClick={clickHandler}>
+                {options.map(options => <div key={options.name}
+                                             className={s.option}
+                                             onClick={clickHandler}>
                     {options.name}
                 </div>)}
             </div>}
