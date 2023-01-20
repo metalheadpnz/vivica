@@ -6,7 +6,7 @@
 
 .row {
   display: flex;
-  //height: calc(50% - 96px);
+  height: calc(50% - 96px);
   margin-left: 36px;
 }
 
@@ -26,8 +26,6 @@
   height: 60px;
   align-items: center;
   margin: 36px;
-
-  display: flex;
 }
 
 .left {
@@ -71,14 +69,14 @@
     border-right: 1px solid #DFF2F5;
 
     &:nth-last-of-type(1) {
-      border-right: 0px solid #DFF2F5;
+      border-right: 0 solid #DFF2F5;
     }
 
     .number {
       color: var(--primary-color);
       font-weight: 300;
       font-size: 92px;
-      font-height: 36px;
+      //font-height: 36px;
     }
 
     .text {

@@ -7,16 +7,16 @@ export const DashboardCard = () => {
             <span className={s.cardTitle}>Result</span>
             <div className={s.dataWrap}>
                 <div className={s.cardData}>
-                    <span className={s.number}>50</span>
-                    <span className={s.text}>mana</span>
+                    <span className={s.number}>34</span>
+                    <span className={s.text}>Critical</span>
                 </div>
                 <div className={s.cardData}>
-                    <span className={s.number}>50</span>
-                    <span className={s.text}>mana</span>
+                    <span className={s.number}>5</span>
+                    <span className={s.text}>Unread</span>
                 </div>
                 <div className={s.cardData}>
-                    <span className={s.number}>50</span>
-                    <span className={s.text}>mana</span>
+                    <span className={s.number}>99</span>
+                    <span className={s.text}>Read</span>
                 </div>
             </div>
         </div>
