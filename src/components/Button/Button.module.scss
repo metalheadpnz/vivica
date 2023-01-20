@@ -1,0 +1,20 @@
+.button {
+  background-color: #19A1B7;
+  color: #fff;
+  width: 149px;
+  height: 42px;
+  //padding: 9px 36px 9px 24px;
+  font-size: 14px;
+
+  &:hover {
+
+  }
+}
+
+.button * {
+  margin-right: 10px;
+
+  &:nth-last-of-type(1) {
+    margin-right: 0;
+  }
+}

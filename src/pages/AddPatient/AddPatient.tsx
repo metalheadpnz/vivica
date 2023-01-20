@@ -1,5 +1,6 @@
 import React from 'react';
 import {useLocation, useNavigate} from "react-router-dom";
+import s from './AddPatient.module.scss'
 
 export const AddPatient = () => {
     const location = useLocation().pathname.split('/');

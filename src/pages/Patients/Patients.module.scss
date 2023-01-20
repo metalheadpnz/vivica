@@ -1,0 +1,22 @@
+.patientsHeader {
+  border: 1px dashed orangered;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 36px;
+}
+
+.patientWrap {
+  margin: 36px;
+}
+
+.title {
+  font-family: Raleway-Bold;
+  font-size: 32px;
+  line-height: 36px;
+}
+
+.tableWrap {
+  background-color: red;
+
+}
