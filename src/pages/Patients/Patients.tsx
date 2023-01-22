@@ -1,11 +1,14 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {useNavigate} from "react-router-dom";
 import s from './Patients.module.scss'
 import {Button} from "../../components/Button/Button";
 import {ReactComponent as Plus} from "../../assets/images/Plus.svg";
+import {Input} from "../../components/Input/Input";
 
 export const Patients = () => {
     const navigate = useNavigate()
+
+    const [input, setInput] = useState('')
 
     const addBtnHandler = () => {
         navigate("addPatient")
@@ -24,7 +27,13 @@ export const Patients = () => {
             </div>
 
             <div className={s.tableWrap}>
-                <div className={s.searchBlock}>search</div>
+                <div className={s.searchBlock}>search
+
+                    <Input placeholder={'newInput'}
+                           onChange={e => setInput(e.currentTarget.value)}
+                           value={input}/>
+
+                </div>
                 <div className={s.table}>table</div>
             </div>
         </div>
