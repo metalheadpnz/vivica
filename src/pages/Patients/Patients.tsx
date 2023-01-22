@@ -24,8 +24,8 @@ export const Patients = () => {
             </div>
 
             <div className={s.tableWrap}>
-                <div className={s.searchBlock}></div>
-                <div className={s.table}></div>
+                <div className={s.searchBlock}>search</div>
+                <div className={s.table}>table</div>
             </div>
         </div>
     );

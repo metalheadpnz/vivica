@@ -16,13 +16,13 @@ function App() {
 
 
     return (
-        <>
+        <div className={'wrapper'}>
             <AppHeader/>
             <div className='wrap_app'>
                 <SideBar collapsed={collapsed} setCollapsed={setCollapsed}/>
                 <MainContent collapsed={collapsed}/>
             </div>
-        </>
+        </div>
     );
 }
 

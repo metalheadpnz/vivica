@@ -1,4 +1,5 @@
 .sidebarWrap {
+    border: 3px dashed grey;
     width: 288px;
     transition: 0.4s;
     display: flex;

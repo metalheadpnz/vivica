@@ -1,7 +1,10 @@
 .wrap {
-    /*border: 1px dashed black;*/
+    border: 3px dashed black;
     background-color: #EFF8FA;
     width: 100%;
+    display: flex;
+    flex-direction: column;
+
     /*transition: 0.4s;*/
 
     /*position: absolute;*/
