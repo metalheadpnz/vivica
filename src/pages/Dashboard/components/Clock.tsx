@@ -7,6 +7,28 @@ type dateFormat = {
     date: string
 }
 
+
+// type FormatDateType = 'DD:MM:YYYY'|undefined
+//
+// function formatDate_(date:Date,format:FormatDateType){
+//
+//     function getTime(){
+//
+//     }
+//
+//     function getDay(){
+//
+//     }
+//
+//     return {
+//         getTime,
+//         getDay
+//     }
+//
+// }
+
+
+
 const days: string[] = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday']
 const months: string[] = ['01', '02', '03', '04', '05', '06', '07', '08', '09', '10', '11', '12']
 

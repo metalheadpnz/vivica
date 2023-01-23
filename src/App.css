@@ -2,14 +2,14 @@
     /*height: calc(100vh - 61px);*/
     display: flex;
     flex-grow: 1;
-    border: 2px dashed deeppink;
+    /*border: 2px dashed deeppink;*/
 
 
 
 }
 
 .wrapper {
-    border: 1px dashed orangered;
+    /*border: 1px dashed orangered;*/
     height: 100vh;
     width: 100vw;
     display: flex;

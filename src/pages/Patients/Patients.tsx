@@ -4,6 +4,7 @@ import s from './Patients.module.scss'
 import {Button} from "../../components/Button/Button";
 import {ReactComponent as Plus} from "../../assets/images/Plus.svg";
 import {Input} from "../../components/Input/Input";
+import {ReactComponent as Magnifier} from "../../assets/images/magnifier.svg";
 
 export const Patients = () => {
     const navigate = useNavigate()
@@ -30,10 +31,14 @@ export const Patients = () => {
                 <div className={s.searchBlock}>search
 
                     <Input placeholder={'newInput'}
+                           IconStart={<Magnifier/>}
                            onChange={e => setInput(e.currentTarget.value)}
                            value={input}/>
 
                 </div>
+
+
+
                 <div className={s.table}>table</div>
             </div>
         </div>
