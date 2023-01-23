@@ -23,9 +23,7 @@ export const Patients = () => {
                 <span className={s.title}>Patients</span>
                 <Button title={'Add new'}
                         frontImg={<Plus/>}
-                        callback={() => {
-                            console.log('btn')
-                        }}
+                        callback={addBtnHandler}
                 />
             </div>
 

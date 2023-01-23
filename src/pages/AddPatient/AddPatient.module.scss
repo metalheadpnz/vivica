@@ -1,0 +1,20 @@
+.wrap{
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.formWrap{
+  flex-grow: 1;
+  background-color: #fff;
+  padding: 36px;
+
+}
+
+.patientInformation{
+  border: 1px solid red;
+  display: flex;
+  flex-direction: column;
+  height: 400px;
+  flex-wrap: wrap;
+}
