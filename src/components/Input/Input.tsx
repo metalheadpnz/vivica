@@ -18,7 +18,7 @@ export const Input: React.FC<PropsTypes> = (
     const [focus, setFocus] = useState(false)
 
     return (
-        <div className={s.outerWrap}>
+        <div className={s.outerWrap} style={restProps.style}>
             <div className={`${s.iconStart} ${focus?s.iconFocus: ''}`}>{IconStart && IconStart}</div>
             <div className={s.wrap}>
 

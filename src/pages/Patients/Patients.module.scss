@@ -25,4 +25,29 @@
 
 .tableWrap {
   flex-grow: 1;
+  background-color: #fff;
+  padding: 36px;
+}
+
+.refreshBtn {
+  width: 42px;
+  height: 42px;
+  border: 1px solid #A81D42;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 18px;
+}
+
+.searchBlock{
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  margin-bottom: 36px;
+
+}
+.buttons{
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
 }
