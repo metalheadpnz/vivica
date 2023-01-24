@@ -23,6 +23,7 @@ export const Select: React.FC<PropsTypes> = ({title, options, callBack}) => {
 
     return (
         <div className={s.wrap}>
+
             <div className={s.title}>{title}</div>
             <div className={s.currentOption} onClick={() => setIsOpen(!isOpen)}>{value} <Arrow
                 className={`${s.arrow} ${isOpen ? s.reversed : ''}`}/></div>

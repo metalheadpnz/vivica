@@ -29,7 +29,7 @@ export const Input: React.FC<PropsTypes> = (
                        {...restProps}
                 />
 
-                <label className={s.formLabel}>
+                <label className={`${s.formLabel} ${s.label}`}>
                     {placeholder}
                 </label>
             </div>

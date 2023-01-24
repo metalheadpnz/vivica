@@ -1,12 +1,15 @@
 .wrap {
-  width: 400px;
+  //width: 400px;
   position: relative;
+  border-bottom: 1px solid #858D9C;
 }
 
 .optionsContainer {
   position: absolute;
   top: 53px;
   left: 0;
+  //border: 1px solid black;
+  box-shadow: 0 3px 5px 3px rgba(240, 240, 240, 0.2);
 }
 
 .reversed {

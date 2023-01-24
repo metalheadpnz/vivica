@@ -2,7 +2,7 @@
   display: flex;
   flex-direction: column;
   flex-grow: 1;
-}
+  }
 
 .formWrap{
   flex-grow: 1;
@@ -12,9 +12,17 @@
 }
 
 .patientInformation{
-  border: 1px solid red;
+  //border: 1px solid red;
   display: flex;
   flex-direction: column;
-  height: 400px;
+  //height: 400px;
   flex-wrap: wrap;
+}
+
+.fromLabel{
+  font-family: Raleway-Regular;
+  color: #4B5563;
+  font-size: 24px;
+  line-height: 28px;
+  margin-bottom: 36px;
 }

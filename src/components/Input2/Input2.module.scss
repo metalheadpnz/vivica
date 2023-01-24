@@ -1,0 +1,43 @@
+.wrap {
+  background-color: #fff;
+  margin-bottom: 28px;
+
+  & input {
+    border: none;
+    border-bottom: 1px solid var(--light-gray);
+    font-size: 14px;
+    outline: none;
+    width: 100%;
+    color: #858D9C;
+    font-family: Raleway-Regular;
+    line-height: 20px;
+  }
+
+  & .label {
+    color: #374151;
+    font-family: Raleway-Medium;
+    display: block;
+    margin-bottom: 7px;
+    line-height: 20px;
+    font-size: 14px;
+
+    & span{
+      color: #A81D42;
+      margin-left: 4px;
+    }
+  }
+}
+
+.error{
+  & input{
+    border-bottom: 1px solid #EA3D5C;
+
+  }
+}
+
+.errorText{
+  font-family: Raleway-Medium;
+  color: #EA3D5C;
+  font-size: 12px;
+  line-height: 16px;
+}
