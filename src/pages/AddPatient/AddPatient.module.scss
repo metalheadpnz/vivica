@@ -1,25 +1,27 @@
-.wrap{
+.wrap {
   display: flex;
   flex-direction: column;
   flex-grow: 1;
-  }
+}
 
-.formWrap{
+.formWrap {
   flex-grow: 1;
   background-color: #fff;
   padding: 36px;
 
 }
 
-.patientInformation{
-  //border: 1px solid red;
-  display: flex;
-  flex-direction: column;
-  //height: 400px;
-  flex-wrap: wrap;
+.patientInformation {
+  //border: 1px dashed #858D9C;
+
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-column-gap: 48px;
+
+
 }
 
-.fromLabel{
+.fromLabel {
   font-family: Raleway-Regular;
   color: #4B5563;
   font-size: 24px;

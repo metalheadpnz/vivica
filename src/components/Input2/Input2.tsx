@@ -10,10 +10,10 @@ type PropsType = {
     endIcon?: ReactNode
 } & React.InputHTMLAttributes<HTMLInputElement>
 
-export const Input2 = ({label, required, isError,errorMessage, ...restProps}: PropsType) => {
-    const width = restProps.style?.width || '464px'
+export const Input2 = ({label, required, isError, errorMessage, ...restProps}: PropsType) => {
+
     return (
-        <div className={`${s.wrap} ${isError ? s.error : ''}`} style={{width}}>
+        <div className={`${s.wrap} ${isError ? s.error : ''}`}>
             <label className={s.label}>
                 {label}{required && <span>*</span>}
             </label>

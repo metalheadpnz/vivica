@@ -2,6 +2,7 @@ import React from 'react';
 import {useLocation, useNavigate} from "react-router-dom";
 import s from './AddPatient.module.scss'
 import {Input2 as Input} from "../../components/Input2/Input2";
+import {Select} from "../../components/Select/Select";
 
 type FieldType = {
     placeholder: string
@@ -73,6 +74,7 @@ export const AddPatient = () => {
                     <Input label={'Race'}/>
 
                 </div>
+
             </div>
         </div>
     );
