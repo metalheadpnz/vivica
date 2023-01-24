@@ -28,7 +28,6 @@ type dateFormat = {
 // }
 
 
-
 const days: string[] = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday']
 const months: string[] = ['01', '02', '03', '04', '05', '06', '07', '08', '09', '10', '11', '12']
 
@@ -43,7 +42,7 @@ export const Clock = () => {
 
     useEffect(() => {
         const refreshIntervalId = setInterval(() => {
-            setDate(formatDate(new Date()))
+               setDate(formatDate(new Date()))
         }, 1000)
         return () => clearInterval(refreshIntervalId)
     }, [])
