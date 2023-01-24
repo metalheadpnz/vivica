@@ -2,14 +2,14 @@
   //width: 400px;
   //height: 200px;
   position: relative;
-  border-bottom: 1px solid #858D9C;
+  //border-bottom: 1px solid #858D9C;
 }
 
 .optionsContainer {
   position: absolute;
   //top: 81px;
   left: 0;
-  border: 1px solid black;
+  //border: 1px solid black;
   box-shadow: 0 3px 5px 3px rgba(240, 240, 240, 0.2);
   width: 100%
 }
@@ -25,7 +25,7 @@
   font-size: 14px;
   line-height: 20px;
   padding-top: 3px;
-  padding-bottom: 3px;
+  //padding-bottom: 3px;
 }
 
 .currentOption {
@@ -36,7 +36,7 @@
   font-weight: 500;
   font-size: 14px;
   line-height: 20px;
-  //border-bottom: 1px solid #858D9C;
+  border-bottom: 1px solid #858D9C;
   display: flex;
 
 }
