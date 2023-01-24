@@ -3,31 +3,7 @@ import {useLocation, useNavigate} from "react-router-dom";
 import s from './AddPatient.module.scss'
 import {Input2 as Input} from "../../components/Input2/Input2";
 import {Select} from "../../components/Select/Select";
-
-type FieldType = {
-    placeholder: string
-    type: 'textInput' | 'calendar' | 'select'
-    isRequired: boolean
-    options?: string[]
-}
-
-const inputFields: FieldType[] = [
-    {
-        placeholder: 'First Name',
-        isRequired: true,
-        type: 'select',
-    },
-    {
-        placeholder: 'Date of Birth',
-        isRequired: true,
-        type: 'calendar',
-    },
-    {
-        placeholder: 'Secondary Phone',
-        isRequired: false,
-        type: 'calendar',
-    },
-]
+import {Select2} from "../../components/Select2/Select2";
 
 export const AddPatient = () => {
     const location = useLocation().pathname.split('/');
@@ -49,12 +25,6 @@ export const AddPatient = () => {
                 <div className={s.fromLabel}>Patient Information</div>
                 <div className={s.patientInformation}>
 
-                    {/*{inputFields.map(el =>*/}
-                    {/*    el.type === 'select'*/}
-                    {/*        ? <div></div>*/}
-                    {/*        : <Input placeholder={el.placeholder} style={{width:'436px'}}/>*/}
-                    {/*)}*/}
-
                     <Input label={'First Name *'}/>
                     <Input label={'Date of Birth *'}/>
                     <Input label={'Secondary Phone'}/>
@@ -70,9 +40,9 @@ export const AddPatient = () => {
                     <Input label={'Middle Name'}/>
                     <Input label={'Cell Phone *'}/>
                     <Input label={'Address/Street 1'}/>
-                    {/*<Select title={'State'} options={[{name: 'TX'},{name: 'CA'},{name: 'FL'}]}/>*/}
+                    {/*<Select title={'State'} options={[{name: 'TX'}, {name: 'CA'}, {name: 'FL'}]}/>*/}
                     <Input label={'Race'}/>
-
+                    <Select2 title={'State'} options={[{name: 'TX'}, {name: 'CA'}, {name: 'FL'}]}/>
                 </div>
 
             </div>
