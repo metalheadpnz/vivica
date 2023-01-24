@@ -3,7 +3,7 @@ import './App.css';
 import {AppHeader} from "./components/AppHeader/AppHeader";
 import {SideBar} from "./components/SideBar/SideBar";
 import {MainContent} from "./components/MainContent/MainContent";
-import '../src/assets/theme.scss'
+import './theme.scss'
 
 function App() {
     const [collapsed, setCollapsed] = useState<boolean>(false)

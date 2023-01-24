@@ -1,3 +1,5 @@
+@import "src/theme";
+
 .wrap {
   display: flex;
   flex-direction: column;
@@ -29,12 +31,12 @@
 }
 
 .left {
-  color: var(--primary-color);
+  color: $primary-color;
   font-size: 32px;
   line-height: 36px;
 
   strong {
-    color: var(--dark-green-text-color);
+    color: $dark-green-text-color;
   }
 }
 
@@ -69,7 +71,7 @@
     }
 
     .number {
-      color: var(--primary-color);
+      color: $primary-color;
       font-weight: 300;
       font-size: 92px;
       //font-height: 36px;

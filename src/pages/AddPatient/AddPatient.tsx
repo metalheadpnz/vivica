@@ -2,7 +2,6 @@ import React from 'react';
 import {useLocation, useNavigate} from "react-router-dom";
 import s from './AddPatient.module.scss'
 import {Input2 as Input} from "../../components/Input2/Input2";
-import {Select} from "../../components/Select/Select";
 import {Select2} from "../../components/Select2/Select2";
 
 export const AddPatient = () => {
@@ -25,12 +24,13 @@ export const AddPatient = () => {
                 <div className={s.fromLabel}>Patient Information</div>
                 <div className={s.patientInformation}>
 
-                    <Input label={'First Name *'}/>
+                    <Input label={'First Name'} require/>
                     <Input label={'Date of Birth *'}/>
                     <Input label={'Secondary Phone'}/>
                     <Input label={'Address/Street 2'}/>
                     <Input label={'Zip Code'}/>
                     <Input label={'Email'}/>
+                    <Input label={'Race'} isError={true} errorMessage={'sdf'}/>
                     <Input label={'Last Name *'}/>
                     {/*<Select title={'Sex *'} options={[{name: 'Male'},{name: 'Female'},]}/>*/}
                     {/*<Select title={'Country'} options={[{name: 'Rus'},{name: 'USA'},]}/>*/}
@@ -41,7 +41,8 @@ export const AddPatient = () => {
                     <Input label={'Cell Phone *'}/>
                     <Input label={'Address/Street 1'}/>
                     {/*<Select title={'State'} options={[{name: 'TX'}, {name: 'CA'}, {name: 'FL'}]}/>*/}
-                    <Input label={'Race'}/>
+                    <Input label={'Race'} isError={true} errorMessage={'sdf'}/>
+                    <Select2 title={'State'} options={[{name: 'TX'}, {name: 'CA'}, {name: 'FL'}]}/>
                     <Select2 title={'State'} options={[{name: 'TX'}, {name: 'CA'}, {name: 'FL'}]}/>
                 </div>
 

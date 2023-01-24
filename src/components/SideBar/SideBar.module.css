@@ -9,7 +9,7 @@
 }
 
 .collapsed {
-    width: 68px;
+    width: 72px;
     background-color: #19A1B7;
 }
 
@@ -68,7 +68,7 @@
 }
 
 .iconWrap {
-    padding: 0 20px;
+    padding: 0 24px 0 20px;
 }
 
 .arrows {

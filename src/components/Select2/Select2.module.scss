@@ -1,3 +1,5 @@
+@import "src/theme";
+
 .wrap {
   //width: 400px;
   //height: 200px;
@@ -38,8 +40,20 @@
   line-height: 20px;
   border-bottom: 1px solid #858D9C;
   display: flex;
-
 }
+
+.error{
+  padding-top: 3px;
+  padding-bottom: 3px;
+  color: #858D9C;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 20px;
+  border-bottom: 1px solid $red;
+  display: flex;
+}
+
 
 .option {
   background-color: #fff;
@@ -56,4 +70,12 @@
 .arrow {
   margin-left: auto;
   margin-right: 5px;
+}
+
+
+.errorText {
+  font-family: Raleway-Medium;
+  color: $red;
+  font-size: 12px;
+  line-height: 16px;
 }
