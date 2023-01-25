@@ -1,11 +1,11 @@
 import React from 'react';
-import {useLocation, useNavigate} from "react-router-dom";
+import {useNavigate} from "react-router-dom";
 import s from './AddPatient.module.scss'
 import {Input2 as Input} from "../../components/Input2/Input2";
 import {Select} from "../../components/Select/Select";
+import {ReactComponent as Arrow} from "../../../src/assets/images/arrow.svg";
 
 export const AddPatient = () => {
-    const location = useLocation().pathname.split('/');
     const navigation = useNavigate()
     const changeLocationHandler = () => {
         navigation('/patients')
@@ -13,13 +13,13 @@ export const AddPatient = () => {
 
     return (
         <div className={s.wrap}>
-            <div>
-                <span onClick={changeLocationHandler}>{location[1]}</span>
-                <span> {">"} </span>
-                <span>{location[2]}</span>
+            <div className={s.breadCrumbs}>
+                <span onClick={changeLocationHandler}>Patients</span>
+                    <Arrow style={{rotate: "90deg", position: 'relative', bottom: "2px"}}/>
+                <span>Add patient</span>
             </div>
 
-            <div>Add patient</div>
+            <div className={s.addPatient}>Add patient</div>
             <div className={s.formWrap}>
                 <div className={s.fromLabel}>Patient Information</div>
                 <div className={s.patientInformation}>

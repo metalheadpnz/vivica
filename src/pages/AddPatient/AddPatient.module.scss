@@ -28,3 +28,25 @@
   line-height: 28px;
   margin-bottom: 36px;
 }
+
+.breadCrumbs {
+  margin-bottom: 16px;
+  * {
+    color: #374151;
+    margin-right: 16px;
+  }
+  :last-child{
+    color: #999FAB;
+  }
+}
+
+.addPatient {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 36px;
+  line-height: 36px;
+  font-size: 32px;
+  color: #374151;
+  font-family: Raleway-Bold;
+}
