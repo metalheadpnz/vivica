@@ -16,14 +16,16 @@
 
 .card {
   border: 1px dashed rebeccapurple;
-  flex-grow: 1;
+  //flex-grow: 1;
   //margin: 0 36px 36px 0;
-  width: 200px;
+  //width: 200px;
   background-color: #fff;
   display: flex;
   flex-direction: column;
   justify-content: center;
+
 }
+
 
 .header {
   display: flex;
@@ -92,3 +94,10 @@
   }
 }
 
+.cardsWrap {
+  display: grid;
+  height: 100%;
+  grid-template-columns: repeat(2, 1fr);
+  grid-column-gap: 36px;
+  grid-row-gap: 36px;
+}

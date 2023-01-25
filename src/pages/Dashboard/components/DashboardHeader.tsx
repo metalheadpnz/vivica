@@ -14,6 +14,7 @@ export const DashboardHeader = () => {
             </div>
             <div className={s.right}>
                 <Select title={'Date interval'}
+
                         options={options}
                         // callBack={(option) => console.log(option)}
                 />
