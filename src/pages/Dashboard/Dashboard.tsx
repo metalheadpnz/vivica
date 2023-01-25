@@ -50,14 +50,6 @@ export const Dashboard = () => {
     return (
         <div className={s.wrap}>
             <DashboardHeader/>
-            {/*<div className={s.row}>*/}
-            {/*    <DashboardCard/>*/}
-            {/*    <DashboardCard/>*/}
-            {/*</div>*/}
-            {/*<div className={s.row}>*/}
-            {/*    <DashboardCard/>*/}
-            {/*    <DashboardCard/>*/}
-            {/*</div>*/}
             <div className={s.cardsWrap}>
                     <DashboardCard/>
                     <DashboardCard/>
