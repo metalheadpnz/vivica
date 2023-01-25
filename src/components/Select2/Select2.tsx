@@ -10,9 +10,10 @@ type PropsTypes = {
     callBack?: (option: string) => void
     error?: true
     errorMessage?: string
+    width?: string
 }
 
-export const Select2: React.FC<PropsTypes> = ({title, options, callBack,error,errorMessage='error'}) => {
+export const Select2: React.FC<PropsTypes> = ({title, options, callBack,error,errorMessage='error', width}) => {
     const [isOpen, setIsOpen] = useState<boolean>(false)
     const [value, setValue] = useState<string>(options[0].name)
 
@@ -24,7 +25,7 @@ export const Select2: React.FC<PropsTypes> = ({title, options, callBack,error,er
     }
 
     return (
-        <div className={s.wrap}>
+        <div className={s.wrap} style={{width}}>
 
             <div className={s.title}>{title}</div>
             <div className={error? s.error: s.currentOption} onClick={() => setIsOpen(!isOpen)}>{value} <Arrow
