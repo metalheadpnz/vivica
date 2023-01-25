@@ -2,7 +2,7 @@ import React from 'react';
 import {useLocation, useNavigate} from "react-router-dom";
 import s from './AddPatient.module.scss'
 import {Input2 as Input} from "../../components/Input2/Input2";
-import {Select2} from "../../components/Select2/Select2";
+import {Select} from "../../components/Select/Select";
 
 export const AddPatient = () => {
     const location = useLocation().pathname.split('/');
@@ -42,8 +42,8 @@ export const AddPatient = () => {
                     <Input label={'Address/Street 1'}/>
                     {/*<Select title={'State'} options={[{name: 'TX'}, {name: 'CA'}, {name: 'FL'}]}/>*/}
                     <Input label={'Race'} isError={true} errorMessage={'sdf'}/>
-                    <Select2 title={'State'} options={[{name: 'TX'}, {name: 'CA'}, {name: 'FL'}]}/>
-                    <Select2 title={'State'} options={[{name: 'TX'}, {name: 'CA'}, {name: 'FL'}]}/>
+                    <Select title={'State'} options={[{name: 'TX'}, {name: 'CA'}, {name: 'FL'}]}/>
+                    <Select title={'State'} options={[{name: 'TX'}, {name: 'CA'}, {name: 'FL'}]}/>
                 </div>
 
             </div>
