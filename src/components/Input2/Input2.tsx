@@ -3,22 +3,21 @@ import s from './Input2.module.scss'
 
 type PropsType = {
     label?: string
-    isError?: boolean
     require?: boolean
-    errorMessage?: string
+    error?: string
     startIcon?: ReactNode
     endIcon?: ReactNode
 } & React.InputHTMLAttributes<HTMLInputElement>
 
-export const Input2 = ({label, require, isError, errorMessage, ...restProps}: PropsType) => {
+export const Input2 = ({label, require, error, ...restProps}: PropsType) => {
 
     return (
-        <div className={`${s.wrap} ${isError ? s.error : ''}`}>
+        <div className={`${s.wrap} ${error ? s.error : ''}`}>
             <label className={s.label}>
                 {label}{require && <span>*</span>}
             </label>
             <input {...restProps}/>
-            {isError && <label className={s.errorText}>{errorMessage}</label>}
+            {error && <label className={s.errorText}>{error}</label>}
         </div>
     );
 }

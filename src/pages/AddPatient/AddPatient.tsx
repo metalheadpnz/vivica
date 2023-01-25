@@ -2,10 +2,8 @@ import React from 'react';
 import {useNavigate} from "react-router-dom";
 import s from './AddPatient.module.scss'
 import {Input2 as Input} from "../../components/Input2/Input2";
-import {Select} from "../../components/Select/Select";
 import {ReactComponent as Arrow} from "../../../src/assets/images/arrow.svg";
 import {Formik} from "formik";
-import {Button} from "../../components/Button/Button";
 import * as Yup from 'yup';
 
 const SignupSchema = Yup.object().shape(
@@ -42,22 +40,21 @@ export const AddPatient = () => {
                             console.log(values)
                         }}>
                         {
-                            (formik) => {
+                            ({
+                                 values,
+                                 errors,
+                                 touched,
+                                 handleChange,
+                                 handleBlur,
+                                 handleSubmit,
+                                 isSubmitting
+                             }) => {
 
-                                const {
-                                    values,
-                                    errors,
-                                    touched,
-                                    handleChange,
-                                    handleBlur,
-                                    handleSubmit,
-                                    isSubmitting
-                                } = formik
-
-                                console.log(formik)
                                 return (
                                     <form onSubmit={handleSubmit}>
                                         <Input
+                                            onBlur={handleBlur}
+                                            error={errors.firstName}
                                             name={'firstName'}
                                             label={'First Name'}
                                             require
