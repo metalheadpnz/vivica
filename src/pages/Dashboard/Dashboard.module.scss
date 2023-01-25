@@ -15,14 +15,17 @@
 }
 
 .card {
-  border: 1px dashed rebeccapurple;
+  //border: 1px dashed rebeccapurple;
   //flex-grow: 1;
   //margin: 0 36px 36px 0;
   //width: 200px;
   background-color: #fff;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+
+  padding: 35px 40px 80px 40px;
+
+  //display: flex;
+  //flex-direction: column;
+  //justify-content: center;
 
 }
 
@@ -55,11 +58,13 @@
   line-height: 28px;
   color: #4B5563;
   //padding: 35px 0 58px 40px;
-  padding: 35px 0 0 40px;
-  display: flex;
+  //padding: 35px 0 0 40px;
+  //display: flex;
 }
 
 .dataWrap {
+  //border: 3px dashed orangered;
+  height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -69,7 +74,8 @@
   .cardData {
     display: flex;
     flex-direction: column;
-    width: 180px;
+    //width: 180px;
+    width: 100%;
     text-align: center;
     border-right: 1px solid #DFF2F5;
 
