@@ -15,7 +15,7 @@ const sideMenu = [
 
 
 export const SideBar = () => {
-    const [collapsed, setCollapsed] = useLocalStorage('collapsedMenu', false)
+    const [collapsed, setCollapsed] = useLocalStorage<boolean>('collapsedMenu', false)
 
     return (
         <div className={`${s.sidebarWrap} ${collapsed ? s.collapsed : s.unCollapsed}`}>
