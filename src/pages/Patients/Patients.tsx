@@ -14,7 +14,7 @@ export const Patients = () => {
     const [input, setInput] = useState('')
 
     const addBtnHandler = () => {
-        navigate("addPatient")
+        navigate("add-patient")
     }
 
     return (
