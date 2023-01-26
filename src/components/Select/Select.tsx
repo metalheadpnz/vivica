@@ -11,11 +11,22 @@ type PropsTypes = {
     error?: true
     errorMessage?: string
     width?: string
+    require?: boolean
+    name?: string
 }
 
-export const Select: React.FC<PropsTypes> = ({title, options, callBack,error,errorMessage='error', width}) => {
+export const Select: React.FC<PropsTypes> = (
+    {
+        title,
+        options,
+        callBack,
+        error,
+        errorMessage = 'error',
+        width,
+        require
+    }) => {
     const [isOpen, setIsOpen] = useState<boolean>(false)
-    const [value, setValue] = useState<string>(options[0].name)
+    const [value, setValue] = useState<string>('')
 
     const clickHandler = (e: React.BaseSyntheticEvent) => {
         const option = e.target.innerText
@@ -27,8 +38,8 @@ export const Select: React.FC<PropsTypes> = ({title, options, callBack,error,err
     return (
         <div className={s.wrap} style={{width}}>
 
-            <div className={s.title}>{title}</div>
-            <div className={error? s.error: s.currentOption} onClick={() => setIsOpen(!isOpen)}>{value} <Arrow
+            <div className={s.title}>{title}{require && <span>*</span>}</div>
+            <div className={error ? s.error : s.currentOption} onClick={() => setIsOpen(!isOpen)}>{value} <Arrow
                 className={`${s.arrow} ${isOpen ? s.reversed : ''}`}/></div>
             {isOpen && <div className={s.optionsContainer}>
                 {options.map(options => <div key={options.name}

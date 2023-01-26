@@ -14,9 +14,9 @@ const SignupSchema = Yup.object().shape(
         dateOfBirth: Yup.date().max(new Date(Date.now() - 567648000000), "You must be at least 18 years").required().label('Date of Birth'),
         lastName: Yup.string().max(50).required().label('Last Name'),
         middleName: Yup.string().max(50).label('Middle Name'),
+        sex: Yup.string().required(),
     }
 )
-
 
 export const AddPatient = () => {
     const navigation = useNavigate()
@@ -35,7 +35,6 @@ export const AddPatient = () => {
             <div className={s.addPatient}>Add patient</div>
             <div className={s.formWrap}>
                 <div className={s.fromLabel}>Patient Information</div>
-                {/*<div className={s.patientInformation}>*/}
 
 
                 <Formik
@@ -59,6 +58,7 @@ export const AddPatient = () => {
 
                             return (
                                 <form onSubmit={handleSubmit} className={s.patientInformation}>
+
 
                                     <Input
                                         label={'First Name'}
@@ -96,17 +96,27 @@ export const AddPatient = () => {
                                         error={touched.dateOfBirth && errors.dateOfBirth}
                                         require
                                     />
-                                    <Input
-                                        label={'Email'}
-                                        name={'email'}
-                                        value={values.email}
-                                        onChange={handleChange}
-                                        onBlur={handleBlur}
-                                        error={touched.email && errors.email}
+                                    <Select
+                                        title={"Sex"}
+                                        name={'sex'}
                                         require
+                                        options={[{name: 'male'}, {name: 'female'}]}
                                     />
 
+
+                                    {/*<Input*/}
+                                    {/*    label={'Email'}*/}
+                                    {/*    name={'email'}*/}
+                                    {/*    value={values.email}*/}
+                                    {/*    onChange={handleChange}*/}
+                                    {/*    onBlur={handleBlur}*/}
+                                    {/*    error={touched.email && errors.email}*/}
+                                    {/*    require*/}
+                                    {/*/>*/}
+
+
                                     <button type='submit'>btn</button>
+
                                 </form>
                             )
                         }
@@ -135,7 +145,6 @@ export const AddPatient = () => {
                 {/*<Select title={'State'} options={[{name: 'TX'}, {name: 'CA'}, {name: 'FL'}]}/>*/}
                 {/*<Select title={'State'} options={[{name: 'TX'}, {name: 'CA'}, {name: 'FL'}]}/>*/}
 
-                {/*</div>*/}
 
             </div>
         </div>

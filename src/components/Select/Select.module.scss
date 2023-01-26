@@ -27,7 +27,11 @@
   font-size: 14px;
   line-height: 20px;
   padding-top: 3px;
-  //padding-bottom: 3px;
+
+  & span {
+    color: #A81D42;
+    margin-left: 4px;
+  }
 }
 
 .currentOption {
@@ -40,6 +44,7 @@
   line-height: 20px;
   border-bottom: 1px solid #858D9C;
   display: flex;
+  height: 27px;
 }
 
 .error{
