@@ -5,10 +5,15 @@ import {Input2 as Input} from "../../components/Input2/Input2";
 import {ReactComponent as Arrow} from "../../../src/assets/images/arrow.svg";
 import {Formik} from "formik";
 import * as Yup from 'yup';
+import {Select} from "../../components/Select/Select";
+
 
 const SignupSchema = Yup.object().shape(
     {
-        firstName: Yup.string().min(2, 'Too Short').max(10, 'too long').required('Required')
+        firstName: Yup.string().max(50).required().label('First Name'),
+        dateOfBirth: Yup.date().max(new Date(Date.now() - 567648000000), "You must be at least 18 years").required().label('Date of Birth'),
+        lastName: Yup.string().max(50).required().label('Last Name'),
+        middleName: Yup.string().max(50).label('Middle Name'),
     }
 )
 
@@ -30,81 +35,107 @@ export const AddPatient = () => {
             <div className={s.addPatient}>Add patient</div>
             <div className={s.formWrap}>
                 <div className={s.fromLabel}>Patient Information</div>
-                <div className={s.patientInformation}>
+                {/*<div className={s.patientInformation}>*/}
 
 
-                    <Formik
-                        initialValues={{firstName: "", Email: "", dateOfBirth: ''}}
-                        validationSchema={SignupSchema}
-                        onSubmit={(values) => {
-                            console.log(values)
-                        }}>
-                        {
-                            ({
-                                 values,
-                                 errors,
-                                 touched,
-                                 handleChange,
-                                 handleBlur,
-                                 handleSubmit,
-                                 isSubmitting
-                             }) => {
+                <Formik
+                    initialValues={{
+                        firstName: "", email: "", dateOfBirth: '', lastName: '', middleName: '',
+                    }}
+                    validationSchema={SignupSchema}
+                    onSubmit={(values) => {
+                        console.log(values)
+                    }}>
+                    {
+                        ({
+                             values,
+                             errors,
+                             touched,
+                             handleChange,
+                             handleBlur,
+                             handleSubmit,
+                             isSubmitting
+                         }) => {
 
-                                return (
-                                    <form onSubmit={handleSubmit}>
-                                        <Input
-                                            onBlur={handleBlur}
-                                            error={errors.firstName}
-                                            name={'firstName'}
-                                            label={'First Name'}
-                                            require
-                                            value={values.firstName}
-                                            onChange={handleChange}
-                                        />
-                                        <Input
-                                            name={'Email'}
-                                            label={'Email'}
-                                            require
-                                            value={values.Email}
-                                            onChange={handleChange}
-                                        />
-                                        <Input
-                                            name={'dateOfBirth'}
-                                            onChange={handleChange}
-                                            value={values.dateOfBirth}
-                                            type={'date'}
-                                            label={'Date of Birth'}
-                                        />
-                                        <button type='submit'>btn</button>
-                                    </form>
-                                )
-                            }
+                            return (
+                                <form onSubmit={handleSubmit} className={s.patientInformation}>
+
+                                    <Input
+                                        label={'First Name'}
+                                        name={'firstName'}
+                                        value={values.firstName}
+                                        onChange={handleChange}
+                                        onBlur={handleBlur}
+                                        error={touched.firstName && errors.firstName}
+                                        require
+                                    />
+                                    <Input
+                                        label={'Last Name'}
+                                        name={'lastName'}
+                                        value={values.lastName}
+                                        onChange={handleChange}
+                                        onBlur={handleBlur}
+                                        error={touched.lastName && errors.lastName}
+                                        require
+                                    />
+                                    <Input
+                                        label={'Middle Name'}
+                                        name={'middleName'}
+                                        value={values.middleName}
+                                        onChange={handleChange}
+                                        onBlur={handleBlur}
+                                        error={touched.middleName && errors.middleName}
+                                    />
+                                    <Input
+                                        label={'Date of Birth'}
+                                        name={'dateOfBirth'}
+                                        value={values.dateOfBirth}
+                                        onChange={handleChange}
+                                        onBlur={handleBlur}
+                                        type={'date'}
+                                        error={touched.dateOfBirth && errors.dateOfBirth}
+                                        require
+                                    />
+                                    <Input
+                                        label={'Email'}
+                                        name={'email'}
+                                        value={values.email}
+                                        onChange={handleChange}
+                                        onBlur={handleBlur}
+                                        error={touched.email && errors.email}
+                                        require
+                                    />
+
+                                    <button type='submit'>btn</button>
+                                </form>
+                            )
                         }
-                    </Formik>
+                    }
+                </Formik>
 
 
-                    {/*<Input label={'First Name'} require/>*/}
-                    {/*<Input label={'Date of Birth *'}/>*/}
-                    {/*<Input label={'Secondary Phone'}/>*/}
-                    {/*<Input label={'Address/Street 2'}/>*/}
-                    {/*<Input label={'Zip Code'}/>*/}
-                    {/*<Input label={'Email'}/>*/}
-                    {/*<Input label={'Race'} isError={true} errorMessage={'sdf'}/>*/}
-                    {/*<Input label={'Last Name *'}/>*/}
-                    {/*<Select title={'Sex *'} options={[{name: 'Male'},{name: 'Female'},]}/>*/}
-                    {/*<Select title={'Country'} options={[{name: 'Rus'},{name: 'USA'},]}/>*/}
-                    {/*<Select title={'City'} options={[{name: 'Pnz'},{name: 'Msk'},]}/>*/}
-                    {/*<Input label={'SSN, last 4 digits'}/>*/}
-                    {/*<Input label={'Ethnicity'}/>*/}
-                    {/*<Input label={'Middle Name'}/>*/}
-                    {/*<Input label={'Cell Phone *'}/>*/}
-                    {/*<Input label={'Address/Street 1'}/>*/}
-                    {/*<Select title={'State'} options={[{name: 'TX'}, {name: 'CA'}, {name: 'FL'}]}/>*/}
-                    {/*<Input label={'Race'} isError={true} errorMessage={'sdf'}/>*/}
-                    {/*<Select title={'State'} options={[{name: 'TX'}, {name: 'CA'}, {name: 'FL'}]}/>*/}
-                    {/*<Select title={'State'} options={[{name: 'TX'}, {name: 'CA'}, {name: 'FL'}]}/>*/}
+                {/*<Input label={'First Name'} require/>*/}
+                {/*<Input label={'Date of Birth *'}/>*/}
+                {/*<Input label={'Secondary Phone'}/>*/}
+                {/*<Input label={'Address/Street 2'}/>*/}
+                {/*<Input label={'Zip Code'}/>*/}
+                {/*<Input label={'Email'}/>*/}
+                {/*<Input label={'Race'} error={'sdf'}/>*/}
+                {/*<Input label={'Last Name *'}/>*/}
+                {/*<Select title={'Sex *'} options={[{name: 'Male'},{name: 'Female'},]}/>*/}
+                {/*<Select title={'Country'} options={[{name: 'Rus'},{name: 'USA'},]}/>*/}
+                {/*<Select title={'City'} options={[{name: 'Pnz'},{name: 'Msk'},]}/>*/}
+                {/*<Input label={'SSN, last 4 digits'}/>*/}
+                {/*<Input label={'Ethnicity'}/>*/}
+                {/*<Input label={'Middle Name'}/>*/}
+                {/*<Input label={'Cell Phone *'}/>*/}
+                {/*<Input label={'Address/Street 1'}/>*/}
+                {/*<Select title={'State'} options={[{name: 'TX'}, {name: 'CA'}, {name: 'FL'}]}/>*/}
+                {/*<Input label={'Race'} error={'sdf'}/>*/}
+                {/*<Select title={'State'} options={[{name: 'TX'}, {name: 'CA'}, {name: 'FL'}]}/>*/}
+                {/*<Select title={'State'} options={[{name: 'TX'}, {name: 'CA'}, {name: 'FL'}]}/>*/}
 
-                </div>
+                {/*</div>*/}
 
             </div>
         </div>

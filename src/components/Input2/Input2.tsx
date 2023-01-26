@@ -4,7 +4,7 @@ import s from './Input2.module.scss'
 type PropsType = {
     label?: string
     require?: boolean
-    error?: string
+    error?: string | boolean
     startIcon?: ReactNode
     endIcon?: ReactNode
 } & React.InputHTMLAttributes<HTMLInputElement>
