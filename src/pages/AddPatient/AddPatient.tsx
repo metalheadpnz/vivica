@@ -14,7 +14,8 @@ const SignupSchema = Yup.object().shape(
         dateOfBirth: Yup.date().max(new Date(Date.now() - 567648000000), "You must be at least 18 years").required().label('Date of Birth'),
         lastName: Yup.string().max(50).required().label('Last Name'),
         middleName: Yup.string().max(50).label('Middle Name'),
-        sex: Yup.string().required(),
+        sex: Yup.string().required().label('Sex'),
+        cellPhone: Yup.string().required('Cell Phone')
     }
 )
 
@@ -39,7 +40,8 @@ export const AddPatient = () => {
 
                 <Formik
                     initialValues={{
-                        firstName: "", email: "", dateOfBirth: '', lastName: '', middleName: '',
+                        firstName: "", email: "", dateOfBirth: '', lastName: '', middleName: '', sex: '',
+                        cellPhone: "",
                     }}
                     validationSchema={SignupSchema}
                     onSubmit={(values) => {
@@ -53,9 +55,13 @@ export const AddPatient = () => {
                              handleChange,
                              handleBlur,
                              handleSubmit,
-                             isSubmitting
+                             isSubmitting,
+                             setFieldValue,
+                             setTouched
                          }) => {
-
+                            // console.log('touched=', touched)
+                            // console.log('values=', values)
+                            console.log('errors=', errors)
                             return (
                                 <form onSubmit={handleSubmit} className={s.patientInformation}>
 
@@ -100,8 +106,33 @@ export const AddPatient = () => {
                                         title={"Sex"}
                                         name={'sex'}
                                         require
+                                        onChange={(e) => {
+                                            setFieldValue('sex', e)
+                                        }}
+                                        onBlur={() => {
+                                            setTouched({...touched, sex: true})
+                                        }}
                                         options={[{name: 'male'}, {name: 'female'}]}
+                                        error={touched.sex && errors.sex}
                                     />
+                                    <Input
+                                        label={'Cell Phone'}
+                                        name={'cellPhone'}
+                                        value={values.cellPhone}
+                                        onChange={handleChange}
+                                        onBlur={handleBlur}
+                                        type={'text'}
+                                        error={touched.cellPhone && errors.cellPhone}
+                                        require
+                                    />
+
+                                    {/*<Field*/}
+                                    {/*    as={Select}*/}
+                                    {/*    name={'sex'}*/}
+                                    {/*    options={[{name: 'male'}, {name: 'female'}]}*/}
+                                    {/*    title={"Sex"}*/}
+                                    {/*    require*/}
+                                    {/*/>*/}
 
 
                                     {/*<Input*/}
@@ -147,6 +178,7 @@ export const AddPatient = () => {
 
 
             </div>
+
         </div>
     );
 }

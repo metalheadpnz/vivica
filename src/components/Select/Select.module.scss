@@ -47,7 +47,7 @@
   height: 27px;
 }
 
-.error{
+.error {
   padding-top: 3px;
   padding-bottom: 3px;
   color: #858D9C;
@@ -57,6 +57,7 @@
   line-height: 20px;
   border-bottom: 1px solid $red;
   display: flex;
+  height: 27px;
 }
 
 
@@ -83,4 +84,13 @@
   color: $red;
   font-size: 12px;
   line-height: 16px;
+}
+
+.outside {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(255, 255, 255, 0);
 }
