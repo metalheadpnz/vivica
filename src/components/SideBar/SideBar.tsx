@@ -5,12 +5,14 @@ import {ReactComponent as Dashboard} from "../../assets/images/Dashboard.svg"
 import {ReactComponent as Patients} from "../../assets/images/Patients.svg"
 import {ReactComponent as Results} from "../../assets/images/Results.svg"
 import {ReactComponent as Arrows} from "../../assets/images/Arrows2ways.svg"
+import {ReactComponent as Orders} from "../../assets/images/Orders.svg"
 import useLocalStorage from "../../hooks/useLocalStorage";
 
 const sideMenu = [
     {title: 'Dashboard', icon: Dashboard, route: 'dashboard'},
     {title: 'Patients', icon: Patients, route: 'patients'},
     {title: 'Results', icon: Results, route: 'results'},
+    {title: 'Orders', icon: Orders, route: 'orders'},
 ]
 
 
