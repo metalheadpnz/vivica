@@ -2,15 +2,16 @@ import React, {useState} from 'react';
 import s from "./Orders.module.scss";
 import {Button} from "../../components/Button/Button";
 import {ReactComponent as Plus} from "../../assets/images/Plus.svg";
-import {Input} from "../../components/Input/Input";
 import {ReactComponent as Magnifier} from "../../assets/images/magnifier.svg";
 import {ReactComponent as CircularArrow} from "../../assets/images/circularArrow.svg";
 import {Select} from "../../components/Select/Select";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
+import "./datePicker.scss"
 import {ReactComponent as Arrows} from "../../assets/images/Arrows2ways.svg";
 import {Table} from "../../components/Table/Table";
-import {Input2} from "../../components/Input2/Input2";
+import {Input2 as Input} from "../../components/Input2/Input2";
+import {Input as InputTemp} from "../../components/Input/Input";
 
 
 const tableHeaders = [
@@ -58,7 +59,7 @@ export const Orders = () => {
 
             <div className={s.tableWrap}>
                 <div className={s.searchBlock}>
-                    <Input placeholder={'Patient'}
+                    <InputTemp placeholder={'Patient'}
                            IconStart={<Magnifier/>}
                            onChange={e => setInput(e.currentTarget.value)}
                            style={{width: '300px'}}
@@ -74,7 +75,8 @@ export const Orders = () => {
                     <div className={s.datePicker}>
 
                         <DatePicker
-                            customInput={<Input2 />}
+                            className={'test'}
+                            customInput={<Input style={{width: '320px'}} label={'Created Date'}/>}
                             monthsShown={2}
                             dateFormat={'dd/MM/yyyy'}
                             selected={startDate}

@@ -1,0 +1,8 @@
+@import "src/theme";
+
+.react-datepicker__month-container > .react-datepicker__header {
+  background-color: $Grey-700;
+  color: #fff !important;
+  font-family: Raleway-Regular, serif;
+  font-size: 16px;
+}

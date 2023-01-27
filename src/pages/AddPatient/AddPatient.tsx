@@ -107,7 +107,7 @@ export const AddPatient = () => {
                             error={touched[f.name] && errors[f.name]}
                         />
                         : <Input
-                            height={'48px'}
+                            style={{marginBottom:'32px', height:'48px',}}
                             key={f.name}
                             label={f.label}
                             type={f.type}
