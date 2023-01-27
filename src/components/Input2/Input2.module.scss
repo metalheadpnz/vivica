@@ -3,6 +3,7 @@
 .wrap {
   background-color: #fff;
   margin-bottom: 32px;
+  height: 48px;
   //width: 100%;
 
   & input {
@@ -12,13 +13,13 @@
     outline: none;
     width: 100%;
     color: #858D9C;
-    font-family: Raleway-Regular;
+    font-family: Raleway-Regular, serif;
     line-height: 20px;
   }
 
   & .label {
     color: #374151;
-    font-family: Raleway-Medium;
+    font-family: Raleway-Medium, serif;;
     display: block;
     margin-bottom: 7px;
     line-height: 20px;
@@ -39,7 +40,7 @@
 }
 
 .errorText {
-  font-family: Raleway-Medium;
+  font-family: Raleway-Medium, serif;
   color: $red;
   font-size: 12px;
   line-height: 16px;
