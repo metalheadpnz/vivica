@@ -3,7 +3,7 @@ import {useNavigate} from "react-router-dom";
 import s from './AddPatient.module.scss'
 import {Input2 as Input} from "../../components/Input2/Input2";
 import {ReactComponent as Arrow} from "../../../src/assets/images/arrow.svg";
-import {Formik} from "formik";
+import {useFormik} from "formik";
 import * as Yup from 'yup';
 import {Select} from "../../components/Select/Select";
 
@@ -69,6 +69,14 @@ export const AddPatient = () => {
         navigation('/patients')
     }
 
+    const formik = useFormik({
+        initialValues,
+        onSubmit: values => console.log(values),
+        validationSchema: SignupSchema
+    })
+
+    const {handleSubmit, setFieldValue, setTouched, touched, errors, values, handleChange, handleBlur} = formik
+
     return (
         <div className={s.wrap}>
             <div className={s.breadCrumbs}>
@@ -81,66 +89,39 @@ export const AddPatient = () => {
             <div className={s.formWrap}>
                 <div className={s.fromLabel}>Patient Information</div>
 
+                <form onSubmit={handleSubmit} className={s.patientInformation}>
 
-                <Formik
-                    initialValues={initialValues}
-                    validationSchema={SignupSchema}
-                    onSubmit={(values) => {
-                        console.log(values)
-                    }}>
-                    {
-                        ({
-                             values,
-                             errors,
-                             touched,
-                             handleChange,
-                             handleBlur,
-                             handleSubmit,
-                             isSubmitting,
-                             setFieldValue,
-                             setTouched
-                         }) => {
-                            // console.log('touched=', touched)
-                            // console.log('values=', values)
-                            // console.log('errors=', errors)
-                            return (
-                                <form onSubmit={handleSubmit} className={s.patientInformation}>
+                    {formFields.map(f => (f.type === 'select')
+                        ? <Select
+                            title={f.label}
+                            name={f.name}
+                            require={f.require}
+                            onChange={(e) => {
+                                setFieldValue(f.name, e)
+                            }}
+                            onBlur={() => {
+                                setTouched({...touched, [f.name]: true})
+                            }}
+                            //@ts-ignore
+                            options={f.options}
+                            error={touched[f.name] && errors[f.name]}
+                        />
+                        : <Input
+                            key={f.name}
+                            label={f.label}
+                            type={f.type}
+                            name={f.name}
+                            value={values[f.name]}
+                            onChange={handleChange}
+                            onBlur={handleBlur}
+                            // error={ (values[f.name] || touched[f.name]) && errors[f.name]}
+                            error={touched[f.name] && errors[f.name]}
+                            require={f.require}
+                        />
+                    )}
+                    <button type='submit'>btn</button>
 
-                                    {formFields.map(f => (f.type === 'select')
-                                        ? <Select
-                                            title={f.label}
-                                            name={f.name}
-                                            require={f.require}
-                                            onChange={(e) => {
-                                                setFieldValue(f.name, e)
-                                            }}
-                                            onBlur={() => {
-                                                setTouched({...touched, [f.name]: true})
-                                            }}
-                                            //@ts-ignore
-                                            options={f.options}
-                                            error={touched[f.name] && errors[f.name]}
-                                        />
-                                        : <Input
-                                            key={f.name}
-                                            label={f.label}
-                                            type={f.type}
-                                            name={f.name}
-                                            value={values[f.name]}
-                                            onChange={handleChange}
-                                            onBlur={handleBlur}
-                                            // error={ (values[f.name] || touched[f.name]) && errors[f.name]}
-                                            error={touched[f.name] && errors[f.name]}
-                                            require={f.require}
-                                        />
-                                    )}
-                                    <button type='submit'>btn</button>
-
-                                </form>
-                            )
-                        }
-                    }
-                </Formik>
+                </form>
 
             </div>
 
