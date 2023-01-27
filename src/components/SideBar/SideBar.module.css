@@ -27,7 +27,7 @@
 
     height: 64px;
     cursor: pointer;
-    font-family: Raleway-Medium;
+    font-family: Raleway-Medium, serif;
 }
 
 .selected {
@@ -38,7 +38,7 @@
 }
 
 .selected div span {
-    font-family: Raleway-Bold;
+    font-family: Raleway-Bold, serif;
 }
 
 .selected svg * {
@@ -68,7 +68,7 @@
 }
 
 .iconWrap {
-    padding: 0 24px 0 20px;
+    padding: 0 27px 0 20px;
 }
 
 .arrows {
@@ -86,7 +86,7 @@
 .arrows span {
     color: #19A1B7;
     margin-right: 20px;
-    font-family: Raleway-Medium;
+    font-family: Raleway-Medium, serif;
 }
 
 .cyanArrows svg * {

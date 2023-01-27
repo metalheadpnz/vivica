@@ -10,6 +10,7 @@ import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import {ReactComponent as Arrows} from "../../assets/images/Arrows2ways.svg";
 import {Table} from "../../components/Table/Table";
+import {Input2} from "../../components/Input2/Input2";
 
 
 const tableHeaders = [
@@ -32,8 +33,18 @@ const tableRows = [
 export const Orders = () => {
     const [input, setInput] = useState('')
 
-    const [startDate, setStartDate] = useState(new Date("2014/01/01"));
-    const [endDate, setEndDate] = useState(new Date("2014/01/02"));
+    // const [startDate, setStartDate] = useState(new Date("2014/01/01"));
+    // const [endDate, setEndDate] = useState(new Date("2014/01/02"));
+
+    const [startDate, setStartDate] = useState(new Date("2023/01/03"));
+    //const [startDate, setStartDate] = useState(null);
+    const [endDate, setEndDate] = useState(new Date("2023/01/05"));
+    //@ts-ignore
+    const onChange = (dates) => {
+        const [start, end] = dates;
+        setStartDate(start);
+        setEndDate(end);
+    };
 
     return (
         <>
@@ -61,21 +72,28 @@ export const Orders = () => {
 
 
                     <div className={s.datePicker}>
+
                         <DatePicker
+                            customInput={<Input2 />}
+                            monthsShown={2}
+                            dateFormat={'dd/MM/yyyy'}
                             selected={startDate}
-                            onChange={(date) => setStartDate(date as Date)}
-                            selectsStart
+                            onChange={onChange}
                             startDate={startDate}
                             endDate={endDate}
+                            selectsRange
+                            // inline
                         />
-                        <DatePicker
-                            selected={endDate}
-                            onChange={(date) => setEndDate(date as Date)}
-                            selectsEnd
-                            startDate={startDate}
-                            endDate={endDate}
-                            minDate={startDate}
-                        />
+
+                        {/*<DatePicker*/}
+                        {/*    monthsShown={2}*/}
+                        {/*    selected={startDate}*/}
+                        {/*    onChange={(date) => setStartDate(date as Date)}*/}
+                        {/*    selectsStart*/}
+                        {/*    startDate={startDate}*/}
+                        {/*    endDate={endDate}*/}
+                        {/*/>*/}
+
                     </div>
 
                     <div className={s.buttons}>
@@ -86,12 +104,7 @@ export const Orders = () => {
                     </div>
                 </div>
 
-                <div className={s.body}>
-
-                    <Table tableHeaders={tableHeaders} tableRows={tableRows}/>
-
-
-                </div>
+                <Table tableHeaders={tableHeaders} tableRows={tableRows}/>
 
             </div>
         </>

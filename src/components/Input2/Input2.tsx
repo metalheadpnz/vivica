@@ -7,12 +7,13 @@ type PropsType = {
     error?: string | boolean
     startIcon?: ReactNode
     endIcon?: ReactNode
+    height?: string
 } & React.InputHTMLAttributes<HTMLInputElement>
 
-export const Input2 = ({label, require, error, ...restProps}: PropsType) => {
+export const Input2 = ({label, require, error, height, ...restProps}: PropsType) => {
 
     return (
-        <div className={`${s.wrap} ${error ? s.error : ''}`}>
+        <div className={`${s.wrap} ${error ? s.error : ''}`} style={{height}}>
             <label className={s.label}>
                 {label}{require && <span>*</span>}
             </label>
