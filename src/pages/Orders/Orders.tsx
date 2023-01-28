@@ -29,6 +29,7 @@ const tableRows = [
     ['1115697', 'Amanda Jonson, 12/05/1996, ID 1564896', '07/03/2022', 'Brackenridge Field Laboratory', 'Complete', '07/01/2022'],
     ['1115697', 'Amanda Jonson, 12/05/1996, ID 1564896', '07/03/2022', 'Brackenridge Field Laboratory', 'Complete', '07/01/2022'],
     ['1115697', 'Amanda Jonson, 12/05/1996, ID 1564896', '07/03/2022', 'Brackenridge Field Laboratory', 'Complete', '07/01/2022'],
+    ['1115697', 'Amanda Jonson, 12/05/1996, ID 1564896', '07/03/2022', 'Brackenridge Field Laboratory', 'Complete', '07/01/2022'],
 ]
 
 export const Orders = () => {
