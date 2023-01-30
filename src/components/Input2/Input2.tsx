@@ -13,7 +13,7 @@ type PropsType = {
 export const Input2 = React.forwardRef (({label, require, error, style, startIcon, endIcon, ...restProps}: PropsType, ref) => {
 
     return (
-        <div className={`${s.wrap} ${error ? s.error : ''}`} style={{...style}}>
+        <div className={`${s.wrap} ${error ? s.error : ''}`} style={style}>
             <label className={s.label}>
                 {label}{require && <span>*</span>}
             </label>

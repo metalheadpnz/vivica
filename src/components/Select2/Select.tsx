@@ -8,7 +8,6 @@ type PropsTypes = {
         name: string
     }>
     error?: string | boolean
-    width?: string
     require?: boolean
     name?: string
     onBlur?: () => void
@@ -17,6 +16,7 @@ type PropsTypes = {
     callBack?: any
     value: string
     onChange: (e: React.BaseSyntheticEvent) => void
+    style?: React.CSSProperties
 }
 
 export const Select2: React.FC<PropsTypes> = (
@@ -26,10 +26,10 @@ export const Select2: React.FC<PropsTypes> = (
         onChange,
         value,
         error,
-        width,
         require,
         onBlur,
         placeholder,
+        style
 
     }) => {
     const [isOpen, setIsOpen] = useState<boolean>(false)
@@ -47,7 +47,7 @@ export const Select2: React.FC<PropsTypes> = (
             }}>
             </div>}
 
-            <div className={s.wrap} style={{width}}>
+            <div className={s.wrap} style={style}>
 
                 <div className={s.title}>{title}{require && <span>*</span>}</div>
                 <div className={error ? s.error : s.currentOption}

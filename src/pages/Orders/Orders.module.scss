@@ -43,6 +43,7 @@
 }
 
 .searchBlock {
+  //border: 1px dashed darkgoldenrod;
   display: flex;
   flex-wrap: wrap;
   align-items: end;
@@ -53,13 +54,18 @@
 }
 
 .buttons {
+  //border: 2px dashed red;
   display: flex;
+  align-self: flex-end;
+  margin-left: auto;
   align-items: end;
   justify-content: space-between;
 }
 
 .datePicker {
   //display: flex;
+  min-width: 300px;
+  flex-grow: 1;
 }
 
 .body {
@@ -68,6 +74,8 @@
 
 .patientInputSearch {
   display: flex;
+  min-width: 272px;
+  flex-grow: 1 ;
 
   & svg {
     position: relative;

@@ -70,35 +70,37 @@ export const Orders = () => {
                         <Magnifier/>
                         <Input placeholder={'Patient'}
                                onChange={e => setInput(e.currentTarget.value)}
-                               style={{width: '272px'}}
+                               style={{width: '100%'}}
                                value={input}/>
                     </div>
-
-                    <Select2 title={'Ordering Provider'}
-                             width={'300px'}
-                             placeholder={'Placeholder'}
-                             options={[{name: 'Provider A'}, {name: 'Provider B'}]}
-                             value={provider}
-                             onChange={(e) => {
-                                 setProvider(e.currentTarget.innerText)
-                             }}
-                    />
-
-                    <Select2 title={'Status'}
-                             width={'300px'}
-                             placeholder={'Placeholder'}
-                             options={[{name: 'status1'}, {name: 'status2'}]}
-                             value={Status}
-                             onChange={(e) => {
-                                 setStatus(e.currentTarget.innerText)
-                             }}
-                    />
-
+                    <div style={{minWidth: '300px', flexGrow: '1'}}>
+                        <Select2 title={'Ordering Provider'}
+                            // style={{minWidth: '300px', flexGrow: '1'}}
+                                 style={{minWidth: '100%'}}
+                                 placeholder={'Placeholder'}
+                                 options={[{name: 'Provider A'}, {name: 'Provider B'}]}
+                                 value={provider}
+                                 onChange={(e) => {
+                                     setProvider(e.currentTarget.innerText)
+                                 }}
+                        />
+                    </div>
+                    <div style={{minWidth: '300px', flexGrow: '1'}}>
+                        <Select2 title={'Status'}
+                                 style={{minWidth: '100%', flexGrow: '1'}}
+                                 placeholder={'Placeholder'}
+                                 options={[{name: 'status1'}, {name: 'status2'}]}
+                                 value={Status}
+                                 onChange={(e) => {
+                                     setStatus(e.currentTarget.innerText)
+                                 }}
+                        />
+                    </div>
                     <div className={s.datePicker}>
 
                         <DatePicker
                             className={'test'}
-                            customInput={<Input style={{width: '300px'}} label={'Created Date'}/>}
+                            customInput={<Input style={{width: '100%'}} label={'Created Date'}/>}
                             monthsShown={2}
                             dateFormat={'dd/MM/yyyy'}
                             selected={startDate}
