@@ -24,6 +24,7 @@ export const Patients = () => {
                 <Button title={'Add new'}
                         frontImg={<Plus/>}
                         onClick={addBtnHandler}
+                        color='secondary'
                 />
             </div>
 
@@ -35,10 +36,17 @@ export const Patients = () => {
                            style={{width: '100%', margin: "0 36px 0 8px"}}
                            value={input}/>
                     <div className={s.buttons}>
-                        <div className={s.refreshBtn} onClick={() => setInput('')}>
-                            <CircularArrow/>
-                        </div>
-                        <Button title={'Search'} style={{backgroundColor: '#A81D42'}}/>
+                        <Button
+                            onClick={() => {
+                                setInput('')
+                            }}
+                            style={{marginRight: '18px'}}
+                            variant='outlined'
+                            color='primary'
+                            frontImg={<CircularArrow/>}
+
+                        />
+                        <Button title={'Search'} color={'primary'}/>
                     </div>
                 </div>
 

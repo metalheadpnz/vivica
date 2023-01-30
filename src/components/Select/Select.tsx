@@ -15,6 +15,8 @@ type PropsTypes = {
     onBlur?: () => void
     defaultOption?: string
     placeholder?: string
+    callBack?: any
+
 }
 
 export const Select: React.FC<PropsTypes> = (
@@ -27,7 +29,8 @@ export const Select: React.FC<PropsTypes> = (
         require,
         onBlur,
         defaultOption,
-        placeholder
+        placeholder,
+
     }) => {
     const [isOpen, setIsOpen] = useState<boolean>(false)
     const [value, setValue] = useState<string>(defaultOption || '')
@@ -38,6 +41,10 @@ export const Select: React.FC<PropsTypes> = (
         onChange && onChange(option)
         setIsOpen(false)
     }
+
+
+
+
 
     return (
         <>
@@ -50,7 +57,8 @@ export const Select: React.FC<PropsTypes> = (
             <div className={s.wrap} style={{width}}>
 
                 <div className={s.title}>{title}{require && <span>*</span>}</div>
-                <div className={error ? s.error : s.currentOption} onClick={() => setIsOpen(!isOpen)}>{value || placeholder} <Arrow
+                <div className={error ? s.error : s.currentOption}
+                     onClick={() => setIsOpen(!isOpen)}>{value || placeholder} <Arrow
                     className={`${s.arrow} ${isOpen ? s.reversed : ''}`}/></div>
                 {isOpen && <div className={s.optionsContainer}>
                     {options.map(options => <div key={options.name}

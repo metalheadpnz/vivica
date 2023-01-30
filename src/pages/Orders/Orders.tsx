@@ -12,7 +12,7 @@ import {ReactComponent as Arrows} from "../../assets/images/Arrows2ways.svg";
 import {Table} from "../../components/Table/Table";
 import {Input2 as Input} from "../../components/Input2/Input2";
 
-type ChangeDateType = any
+type ChangeDateType = (date: [(Date | null), (Date | null)], event: React.SyntheticEvent<any, Event> | undefined) => void
 
 const tableHeaders = [
     {title: 'Requisition ID'},
@@ -34,12 +34,11 @@ const tableRows = [
 
 export const Orders = () => {
     const [input, setInput] = useState('')
-    const [startDate, setStartDate] = useState(new Date("2023/01/03"));
-    const [endDate, setEndDate] = useState(new Date("2023/01/05"));
+    const [startDate, setStartDate] = useState<Date | null>(null);
+    const [endDate, setEndDate] = useState<Date | null>(null);
 
 
-    const onChange: ChangeDateType = (dates: Date[]) => {
-        console.log(dates)
+    const onChange: ChangeDateType = (dates) => {
         const [start, end] = dates;
         setStartDate(start);
         setEndDate(end);
@@ -47,10 +46,9 @@ export const Orders = () => {
 
     const clearFilters = () => {
         setInput('')
-        setStartDate(new Date("2023/01/03"))
-        setEndDate(new Date("2023/01/05"))
+        setStartDate(null)
+        setEndDate(null)
     }
-
 
     return (
         <>
@@ -74,9 +72,11 @@ export const Orders = () => {
                     </div>
 
                     <Select title={"Ordering Provider"}
+                            placeholder={'Placeholder'}
                             options={[{name: 'option1'}, {name: 'option2'}]} width={'300px'}/>
 
                     <Select title={"Ordering Provider"}
+                            placeholder={'Placeholder'}
                             options={[{name: 'status1'}, {name: 'status2'}]} width={'300px'}/>
 
 
@@ -92,21 +92,18 @@ export const Orders = () => {
                             startDate={startDate}
                             endDate={endDate}
                             selectsRange
+                            placeholderText={'00/00/00 - 00/00/00'}
                             // inline
                         />
                     </div>
 
                     <div className={s.buttons}>
-                        {/*<div className={s.refreshBtn}>*/}
-                        {/*    <CircularArrow/>*/}
-                        {/*</div>*/}
                         <Button
                             onClick={clearFilters}
                             style={{marginRight: '18px'}}
                             variant='outlined'
                             color='primary'
                             frontImg={<CircularArrow/>}
-
                         />
                         <Button
                             color='primary'
