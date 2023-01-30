@@ -10,29 +10,23 @@ import {Select} from "../../components/Select/Select";
 const phoneRegExp = /^((\\+[1-9]{1,4}[ \\-]*)|(\\([0-9]{2,3}\\)[ \\-]*)|([0-9]{2,4})[ \\-]*)*?[0-9]{3,4}?[ \\-]*[0-9]{3,4}?$/
 
 const formFields = [
-    {name: 'firstName', label: 'First Name', require: true, type: 'text', options: []},
-    {name: 'lastName', label: 'Last Name', require: false, type: 'text', options: []},
-    {name: 'middleName', label: 'Middle Name', require: false, type: 'text', options: []},
-    {name: 'dateOfBirth', label: 'Date Of Birth', require: false, type: 'date', options: []},
-    {name: 'sex', label: 'Sex', require: true, type: 'select', options: [{name: 'male'}, {name: 'female'}]},
-    {name: 'cellPhone', label: 'Cell Phone', require: true, type: 'number', options: []},
-    {name: 'secondaryPhone', label: 'Secondary Phone', require: false, type: 'number', options: []},
-    {
-        name: 'country',
-        label: 'Country',
-        require: false,
-        type: 'select',
-        options: [{name: 'RU'}, {name: 'KZ'}, {name: 'US'}]
-    },
-    {name: 'addressStreet', label: 'Address/Street 1', require: false, type: 'text', options: []},
-    {name: 'addressStreet2', label: 'Address/Street 2', require: false, type: 'text', options: []},
-    {name: 'city', label: 'City', require: false, type: 'select', options: [{name: 'NY'}, {name: 'LA'}]},
-    {name: 'state', label: 'State', require: false, type: 'select', options: [{name: 'NY'}, {name: 'LA'}]},
-    {name: 'zipCode', label: 'Zip Code', require: false, type: 'number', options: []},
-    {name: 'SSN', label: 'SSN, last 4 digits', require: false, type: 'number', options: []},
-    {name: 'race', label: 'Race', require: false, type: 'select', options: [{name: 'European'}, {name: 'Indian'}]},
-    {name: 'email', label: 'Email', require: false, type: 'text', options: []},
-    {name: 'ethnicity', label: 'Ethnicity', require: false, type: 'select', options: [{name: '1'}, {name: '2'}]},
+    {name: 'firstName', label: 'First Name', require: true, type: 'text', options: [], placeholder: 'Placeholder'},
+    {name: 'lastName', label: 'Last Name', require: false, type: 'text', options: [],placeholder: 'Placeholder'},
+    {name: 'middleName', label: 'Middle Name', require: false, type: 'text', options: [],placeholder: 'Placeholder'},
+    {name: 'dateOfBirth', label: 'Date Of Birth', require: false, type: 'date', options: [],placeholder: 'Placeholder'},
+    {name: 'sex', label: 'Sex', require: true, type: 'select', options: [{name: 'male'}, {name: 'female'}],placeholder: 'Placeholder'},
+    {name: 'cellPhone', label: 'Cell Phone', require: true, type: 'number', options: [],placeholder: 'Placeholder'},
+    {name: 'secondaryPhone', label: 'Secondary Phone', require: false, type: 'number', options: [],placeholder: 'Placeholder'},
+    {name: 'country', label: 'Country', require: false, type: 'select', options: [{name: 'RU'}, {name: 'KZ'}, {name: 'US'}], placeholder: 'Placeholder'},
+    {name: 'addressStreet', label: 'Address/Street 1', require: false, type: 'text', options: [],placeholder: 'Placeholder'},
+    {name: 'addressStreet2', label: 'Address/Street 2', require: false, type: 'text', options: [],placeholder: 'Placeholder'},
+    {name: 'city', label: 'City', require: false, type: 'select', options: [{name: 'NY'}, {name: 'LA'}],placeholder: 'Placeholder'},
+    {name: 'state', label: 'State', require: false, type: 'select', options: [{name: 'NY'}, {name: 'LA'}],placeholder: 'Placeholder'},
+    {name: 'zipCode', label: 'Zip Code', require: false, type: 'number', options: [],placeholder: 'Placeholder'},
+    {name: 'SSN', label: 'SSN, last 4 digits', require: false, type: 'number', options: [],placeholder: 'Placeholder'},
+    {name: 'race', label: 'Race', require: false, type: 'select', options: [{name: 'European'}, {name: 'Indian'}],placeholder: 'Placeholder'},
+    {name: 'email', label: 'Email', require: false, type: 'text', options: [],placeholder: 'Placeholder'},
+    {name: 'ethnicity', label: 'Ethnicity', require: false, type: 'select', options: [{name: '1'}, {name: '2'}],placeholder: 'Placeholder'},
 ] as const
 
 //const initialValue: { [key: string]: string } = {}
@@ -94,6 +88,7 @@ export const AddPatient = () => {
                     {formFields.map(f => (f.type === 'select')
                         ? <Select
                             title={f.label}
+                            placeholder={f.placeholder}
                             name={f.name}
                             require={f.require}
                             onChange={(e) => {
@@ -108,6 +103,7 @@ export const AddPatient = () => {
                         />
                         : <Input
                             style={{marginBottom:'32px', height:'48px',}}
+                            placeholder={f.placeholder}
                             key={f.name}
                             label={f.label}
                             type={f.type}
