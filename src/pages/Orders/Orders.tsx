@@ -11,12 +11,12 @@ import "./datePicker.scss"
 import {ReactComponent as Arrows} from "../../assets/images/Arrows2ways.svg";
 import {Table} from "../../components/Table/Table";
 import {Input2 as Input} from "../../components/Input2/Input2";
-import {Input as InputTemp} from "../../components/Input/Input";
 
+type ChangeDateType = any
 
 const tableHeaders = [
     {title: 'Requisition ID'},
-    {title: 'Requisition ID', icon: Arrows},
+    {title: 'Patient', icon: Arrows},
     {title: 'Created Date', icon: Arrows},
     {title: 'Ordering Provider'},
     {title: 'Status'},
@@ -34,37 +34,44 @@ const tableRows = [
 
 export const Orders = () => {
     const [input, setInput] = useState('')
-
-    // const [startDate, setStartDate] = useState(new Date("2014/01/01"));
-    // const [endDate, setEndDate] = useState(new Date("2014/01/02"));
-
     const [startDate, setStartDate] = useState(new Date("2023/01/03"));
-    //const [startDate, setStartDate] = useState(null);
     const [endDate, setEndDate] = useState(new Date("2023/01/05"));
-    //@ts-ignore
-    const onChange = (dates) => {
+
+
+    const onChange: ChangeDateType = (dates: Date[]) => {
+        console.log(dates)
         const [start, end] = dates;
         setStartDate(start);
         setEndDate(end);
     };
 
+    const clearFilters = () => {
+        setInput('')
+        setStartDate(new Date("2023/01/03"))
+        setEndDate(new Date("2023/01/05"))
+    }
+
+
     return (
         <>
             <div className={s.patientsHeader}>
                 <span className={s.title}>Orders</span>
-                <Button title={'New order'}
+                <Button title={' New order'}
                         frontImg={<Plus/>}
-                        callback={() => console.log('new order')}
+                        onClick={() => console.log('new order')}
+                        color='secondary'
                 />
             </div>
 
             <div className={s.tableWrap}>
                 <div className={s.searchBlock}>
-                    <InputTemp placeholder={'Patient'}
-                           IconStart={<Magnifier/>}
-                           onChange={e => setInput(e.currentTarget.value)}
-                           style={{width: '300px'}}
-                           value={input}/>
+                    <div className={s.patientInputSearch}>
+                        <Magnifier/>
+                        <Input placeholder={'Patient'}
+                               onChange={e => setInput(e.currentTarget.value)}
+                               style={{width: '272px'}}
+                               value={input}/>
+                    </div>
 
                     <Select title={"Ordering Provider"}
                             options={[{name: 'option1'}, {name: 'option2'}]} width={'300px'}/>
@@ -77,7 +84,7 @@ export const Orders = () => {
 
                         <DatePicker
                             className={'test'}
-                            customInput={<Input style={{width: '320px'}} label={'Created Date'}/>}
+                            customInput={<Input style={{width: '300px'}} label={'Created Date'}/>}
                             monthsShown={2}
                             dateFormat={'dd/MM/yyyy'}
                             selected={startDate}
@@ -87,23 +94,26 @@ export const Orders = () => {
                             selectsRange
                             // inline
                         />
-
-                        {/*<DatePicker*/}
-                        {/*    monthsShown={2}*/}
-                        {/*    selected={startDate}*/}
-                        {/*    onChange={(date) => setStartDate(date as Date)}*/}
-                        {/*    selectsStart*/}
-                        {/*    startDate={startDate}*/}
-                        {/*    endDate={endDate}*/}
-                        {/*/>*/}
-
                     </div>
 
                     <div className={s.buttons}>
-                        <div className={s.refreshBtn}>
-                            <CircularArrow/>
-                        </div>
-                        <Button title={'Apply'} style={{backgroundColor: '#A81D42'}}/>
+                        {/*<div className={s.refreshBtn}>*/}
+                        {/*    <CircularArrow/>*/}
+                        {/*</div>*/}
+                        <Button
+                            onClick={clearFilters}
+                            style={{marginRight: '18px'}}
+                            variant='outlined'
+                            color='primary'
+                            frontImg={<CircularArrow/>}
+
+                        />
+                        <Button
+                            color='primary'
+                            title='Apply'
+                            variant='solid'
+                            // style={{backgroundColor: '#A81D42'}}
+                        />
                     </div>
                 </div>
 

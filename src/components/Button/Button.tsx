@@ -4,20 +4,23 @@ import s from './Button.module.scss'
 
 type PropsType = {
     title?: any
-    callback?: () => void
     style?: any
     frontImg?: any
     rearImg?: any
-}
+    color?: 'primary' | 'secondary'
+    variant?: 'solid' | 'outlined'
+} & React.ButtonHTMLAttributes<HTMLButtonElement>
 
-export const Button = ({title, callback, style, frontImg, rearImg}: PropsType) => {
+export const Button = ({title, style, frontImg, rearImg, color, variant, ...restProps}: PropsType) => {
     return (
-        <button className={s.button}
-                onClick={callback}
-                style={{...style}}>
-            <span>{frontImg}</span>
-            <span>{title}</span>
-            <span>{rearImg}</span>
+        <button className={`${s.button} ${color && s[color]} ${variant && s[variant]} ${title ? '' : s.small}`}
+                style={{...style}}
+                {...restProps}>
+
+            {frontImg}
+            {title}
+            {rearImg}
+
         </button>
     );
 }

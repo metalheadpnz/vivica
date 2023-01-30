@@ -1,3 +1,5 @@
+@import "src/theme";
+
 .button {
   background-color: #19A1B7;
   color: #fff;
@@ -6,10 +8,75 @@
   //padding: 9px 36px 9px 24px;
   font-size: 14px;
 
-  &:hover {
 
+  &:disabled {
+    background-color: $Grey-200;
+    color: $Grey-400;
+
+    & svg * {
+      fill: $Grey-400;
+    }
   }
 }
+
+.primary {
+  background-color: $Primary;
+  border: 1px solid $Primary;
+
+  & svg * {
+    fill: $Primary;
+  }
+
+  &:hover {
+    background-color: $Primary-dark;
+    border: 1px solid $Primary-dark;
+
+    & svg * {
+      fill: $Primary-dark;
+    }
+  }
+
+  &:active {
+    background-color: $Primary-light;
+    border: 1px solid $Primary-light;
+
+    & svg * {
+      fill: $Primary-light;
+    }
+  }
+}
+
+.secondary {
+  background-color: $Secondary;
+
+  &:hover {
+    background-color: $Secondary-dark;
+  }
+
+  &:active {
+    background-color: $Secondary-light;
+  }
+}
+
+.solid {
+
+}
+
+.outlined {
+  background-color: #fff;
+  color: $Primary;
+
+  &:hover {
+    background-color: #fff;
+    color: $Primary-dark;
+  }
+
+  &:active {
+    background-color: #fff;
+    color: $Primary-light;
+  }
+}
+
 
 .button * {
   margin-right: 10px;
@@ -17,4 +84,11 @@
   &:nth-last-of-type(1) {
     margin-right: 0;
   }
+}
+
+.small {
+  width: 42px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }

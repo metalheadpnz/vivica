@@ -12,13 +12,13 @@ export const Table = ({tableHeaders, tableRows}: PropsType) => {
         <table cellSpacing="0" className={s.test}>
             <tbody>
             <tr>
-                {tableHeaders.map(h =>
-                    <th className={s.tHead}>{h.title}{h.icon && <h.icon/>}</th>
+                {tableHeaders.map((h,i) =>
+                    <th className={s.tHead} key={h.title+i.toString()}>{h.title}{h.icon && <h.icon/>}</th>
                 )}
             </tr>
             {
-                tableRows.map(row => <tr className={s.tRow}>
-                    {row.map(cell => <td>{cell}</td>)}
+                tableRows.map((row, index) => <tr key={index} className={s.tRow}>
+                    {row.map((cell, i) => <td key={cell.toString()+i.toString()}>{cell}</td>)}
                 </tr>)
             }
             </tbody>

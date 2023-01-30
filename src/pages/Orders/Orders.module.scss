@@ -48,7 +48,8 @@
   align-items: end;
   justify-content: space-between;
   margin-bottom: 36px;
-
+  row-gap: 36px;
+  column-gap: 40px;
 }
 
 .buttons {
@@ -57,13 +58,21 @@
   justify-content: space-between;
 }
 
-.datePicker{
+.datePicker {
   //display: flex;
 }
 
-.body{
+.body {
 
 }
 
+.patientInputSearch {
+  display: flex;
 
+  & svg {
+    position: relative;
+    top: 7px;
+    margin-right: 7px;
+  }
+}
 
