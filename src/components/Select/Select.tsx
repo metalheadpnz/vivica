@@ -13,6 +13,7 @@ type PropsTypes = {
     require?: boolean
     name?: string
     onBlur?: () => void
+    defaultOption?: string
 }
 
 export const Select: React.FC<PropsTypes> = (
@@ -23,10 +24,11 @@ export const Select: React.FC<PropsTypes> = (
         error,
         width,
         require,
-        onBlur
+        onBlur,
+        defaultOption
     }) => {
     const [isOpen, setIsOpen] = useState<boolean>(false)
-    const [value, setValue] = useState<string>('')
+    const [value, setValue] = useState<string>(defaultOption || '')
 
     const clickHandler = (e: React.BaseSyntheticEvent) => {
         const option = e.target.innerText

@@ -3,7 +3,7 @@ import s from "../Dashboard.module.scss";
 import {Select} from "../../../components/Select/Select";
 import {Clock} from "./Clock";
 
-const options = [{name: ' Last 30 days'}, {name: 'Last 60 days'}, {name: ' Last 90 days'}]
+const options = [{name: 'Last 30 days'}, {name: 'Last 60 days'}, {name: ' Last 90 days'}]
 
 export const DashboardHeader = () => {
     return (
@@ -16,7 +16,7 @@ export const DashboardHeader = () => {
                 <Select title={'Date interval'}
                         width='400px'
                         options={options}
-                    // callBack={(option) => console.log(option)}
+                        defaultOption={options[0].name}
                 />
                 <Clock/>
             </div>
