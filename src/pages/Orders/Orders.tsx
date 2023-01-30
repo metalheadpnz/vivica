@@ -4,13 +4,13 @@ import {Button} from "../../components/Button/Button";
 import {ReactComponent as Plus} from "../../assets/images/Plus.svg";
 import {ReactComponent as Magnifier} from "../../assets/images/magnifier.svg";
 import {ReactComponent as CircularArrow} from "../../assets/images/circularArrow.svg";
-import {Select} from "../../components/Select/Select";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import "./datePicker.scss"
 import {ReactComponent as Arrows} from "../../assets/images/Arrows2ways.svg";
 import {Table} from "../../components/Table/Table";
 import {Input2 as Input} from "../../components/Input2/Input2";
+import {Select2} from "../../components/Select2/Select";
 
 type ChangeDateType = (date: [(Date | null), (Date | null)], event: React.SyntheticEvent<any, Event> | undefined) => void
 
@@ -43,13 +43,16 @@ export const Orders = () => {
         setStartDate(start);
         setEndDate(end);
     };
+    const [Status, setStatus] = useState<string>('')
+    const [provider, setProvider] = useState<string>('')
 
     const clearFilters = () => {
         setInput('')
         setStartDate(null)
         setEndDate(null)
+        setStatus('')
+        setProvider('')
     }
-
     return (
         <>
             <div className={s.patientsHeader}>
@@ -71,14 +74,25 @@ export const Orders = () => {
                                value={input}/>
                     </div>
 
-                    <Select title={"Ordering Provider"}
-                            placeholder={'Placeholder'}
-                            options={[{name: 'option1'}, {name: 'option2'}]} width={'300px'}/>
+                    <Select2 title={'Ordering Provider'}
+                             width={'300px'}
+                             placeholder={'Placeholder'}
+                             options={[{name: 'Provider A'}, {name: 'Provider B'}]}
+                             value={provider}
+                             onChange={(e) => {
+                                 setProvider(e.currentTarget.innerText)
+                             }}
+                    />
 
-                    <Select title={"Ordering Provider"}
-                            placeholder={'Placeholder'}
-                            options={[{name: 'status1'}, {name: 'status2'}]} width={'300px'}/>
-
+                    <Select2 title={'Status'}
+                             width={'300px'}
+                             placeholder={'Placeholder'}
+                             options={[{name: 'status1'}, {name: 'status2'}]}
+                             value={Status}
+                             onChange={(e) => {
+                                 setStatus(e.currentTarget.innerText)
+                             }}
+                    />
 
                     <div className={s.datePicker}>
 
@@ -93,8 +107,7 @@ export const Orders = () => {
                             endDate={endDate}
                             selectsRange
                             placeholderText={'00/00/00 - 00/00/00'}
-                            // inline
-                        />
+                         />
                     </div>
 
                     <div className={s.buttons}>
@@ -109,7 +122,6 @@ export const Orders = () => {
                             color='primary'
                             title='Apply'
                             variant='solid'
-                            // style={{backgroundColor: '#A81D42'}}
                         />
                     </div>
                 </div>
