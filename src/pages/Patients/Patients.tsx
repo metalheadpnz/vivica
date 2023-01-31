@@ -3,7 +3,7 @@ import {useNavigate} from "react-router-dom";
 import s from './Patients.module.scss'
 import {Button} from "../../components/Button/Button";
 import {ReactComponent as Plus} from "../../assets/images/Plus.svg";
-import {Input2 as Input} from "../../components/Input2/Input2";
+import {Input as Input} from "../../components/Input/Input";
 import {ReactComponent as Magnifier} from "../../assets/images/magnifier.svg";
 import {ReactComponent as CircularArrow} from "../../assets/images/circularArrow.svg";
 import {PatientsTable} from "./components/PatientsTable";

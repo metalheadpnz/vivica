@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import s from "../Dashboard.module.scss";
 import {Clock} from "./Clock";
-import {Select2} from "../../../components/Select2/Select";
+import {Select} from "../../../components/Select/Select";
 
 const options = [{name: 'Last 30 days'}, {name: 'Last 60 days'}, {name: ' Last 90 days'}]
 
@@ -15,7 +15,7 @@ export const DashboardHeader = () => {
             </div>
             <div className={s.right}>
 
-                <Select2
+                <Select
                     title={'Date interval'}
                     options={options}
                     value={dateInterval}

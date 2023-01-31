@@ -1,39 +1,24 @@
-import React, {ReactNode, useState} from 'react';
+import React, {LegacyRef, ReactNode} from 'react';
 import s from './Input.module.scss'
 
-type PropsTypes = {
-    placeholder: string
-    IconStart?: ReactNode
-    IconEnd?: ReactNode
+type PropsType = {
+    label?: string
+    require?: boolean
+    error?: string | boolean
+    startIcon?: ReactNode
+    endIcon?: ReactNode
+    height?: string
 } & React.InputHTMLAttributes<HTMLInputElement>
 
-export const Input: React.FC<PropsTypes> = (
-    {
-        placeholder,
-        IconStart,
-        IconEnd,
-        ...restProps
-    }) => {
-
-    const [focus, setFocus] = useState(false)
+export const Input = React.forwardRef (({label, require, error, style, startIcon, endIcon, ...restProps}: PropsType, ref) => {
 
     return (
-        <div className={s.outerWrap} style={restProps.style}>
-            <div className={`${s.iconStart} ${focus?s.iconFocus: ''}`}>{IconStart && IconStart}</div>
-            <div className={s.wrap}>
-
-                <input className={s.formField}
-                       placeholder={placeholder}
-                       onFocus={() => setFocus(true)}
-                       onBlur={() => setFocus(false)}
-                       {...restProps}
-                />
-
-                <label className={`${s.formLabel} ${s.label}`}>
-                    {placeholder}
-                </label>
-            </div>
-            <div className={`${s.iconEnd} ${focus?s.iconFocus: ''}`}>{IconEnd && IconEnd}</div>
+        <div className={`${s.wrap} ${error ? s.error : ''}`} style={style}>
+            <label className={s.label}>
+                {label}{require && <span>*</span>}
+            </label>
+            <input {...restProps} ref={ref as LegacyRef<HTMLInputElement> | undefined}/>
+            {error && <label className={s.errorText}>{error}</label>}
         </div>
     );
-};
+})

@@ -1,11 +1,11 @@
 import React from 'react';
 import {useNavigate} from "react-router-dom";
 import s from './AddPatient.module.scss'
-import {Input2 as Input} from "../../components/Input2/Input2";
+import {Input as Input} from "../../components/Input/Input";
 import {ReactComponent as Arrow} from "../../../src/assets/images/arrow.svg";
 import {useFormik} from "formik";
 import * as Yup from 'yup';
-import {Select2} from "../../components/Select2/Select";
+import {Select} from "../../components/Select/Select";
 
 const phoneRegExp = /^((\\+[1-9]{1,4}[ \\-]*)|(\\([0-9]{2,3}\\)[ \\-]*)|([0-9]{2,4})[ \\-]*)*?[0-9]{3,4}?[ \\-]*[0-9]{3,4}?$/
 
@@ -157,7 +157,7 @@ export const AddPatient = () => {
 
                     {formFields.map(f => (f.type === 'select')
                         ?
-                        <Select2
+                        <Select
                             options={f.options as any}
                             error={touched[f.name] && errors[f.name]}
                             onBlur={() => setTouched({...touched, [f.name]: true})}

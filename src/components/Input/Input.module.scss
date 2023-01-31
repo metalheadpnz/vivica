@@ -1,71 +1,44 @@
+@import "src/theme";
+
 .wrap {
-  position: relative;
-  padding: 15px 0 0;
-  //margin-top: 10px;
-  width: 200px;
-  //border: 1px solid gray;
-}
+  //background-color: #fff;
 
-.outerWrap {
-  display: flex;
-  align-items: end;
+  & input {
+    border: none;
+    border-bottom: 1px solid $light-gray;
+    font-size: 14px;
+    outline: none;
+    width: 100%;
+    color: #858D9C;
+    font-family: Raleway-Regular, serif;
+    line-height: 20px;
+  }
 
-  svg * & .formField:focus {
-    fill: #19A1B7;
+  & .label {
+    color: #374151;
+    font-family: Raleway-Medium, serif;;
+    display: block;
+    margin-bottom: 7px;
+    line-height: 20px;
+    font-size: 14px;
+
+    & span {
+      color: #A81D42;
+      margin-left: 4px;
+    }
   }
 }
 
-.formField {
-  font-family: inherit;
-  width: 100%;
-  border: 0;
-  border-bottom: 1px solid #d2d2d2;
-  outline: 0;
-  font-size: 16px;
-  color: #374151;
-  padding: 7px 0;
-  background: transparent;
-  transition: border-color 0.2s;
+.error {
+  & input {
+    border-bottom: 1px solid $red;
+
+  }
 }
 
-.formField::placeholder {
-  color: transparent;
-}
-
-.formField:placeholder-shown ~ .formLabel {
-  font-size: 16px;
-  cursor: text;
-  top: 20px;
-}
-
-.label,
-.formField:focus ~ .formLabel {
-  position: absolute;
-  top: 0;
-  display: block;
-  transition: 0.2s;
+.errorText {
+  font-family: Raleway-Medium, serif;
+  color: $red;
   font-size: 12px;
-  color: #9b9b9b;
+  line-height: 16px;
 }
-
-.formField:focus ~ .formLabel {
-  color: #19A1B7;
-}
-
-.formField:focus {
-  padding-bottom: 6px;
-  border-bottom: 2px solid #19A1B7;
-}
-
-.iconStart {
-  margin-right: 10px;
-}
-
-.iconEnd{
-  margin-left: 10px;
-}
-
-.iconFocus svg * {
-  fill: #19A1B7;
-}
-

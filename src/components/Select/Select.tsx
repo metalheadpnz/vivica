@@ -7,16 +7,16 @@ type PropsTypes = {
     options: Array<{
         name: string
     }>
-    onChange?: (option: string) => void
     error?: string | boolean
-    width?: string
     require?: boolean
     name?: string
     onBlur?: () => void
     defaultOption?: string
     placeholder?: string
     callBack?: any
-
+    value: string
+    onChange: (e: React.BaseSyntheticEvent) => void
+    style?: React.CSSProperties
 }
 
 export const Select: React.FC<PropsTypes> = (
@@ -24,27 +24,20 @@ export const Select: React.FC<PropsTypes> = (
         title,
         options,
         onChange,
+        value,
         error,
-        width,
         require,
         onBlur,
-        defaultOption,
         placeholder,
+        style
 
     }) => {
     const [isOpen, setIsOpen] = useState<boolean>(false)
-    const [value, setValue] = useState<string>(defaultOption || '')
 
     const clickHandler = (e: React.BaseSyntheticEvent) => {
-        const option = e.target.innerText
-        setValue(option)
-        onChange && onChange(option)
+        onChange && onChange(e)
         setIsOpen(false)
     }
-
-
-
-
 
     return (
         <>
@@ -54,7 +47,7 @@ export const Select: React.FC<PropsTypes> = (
             }}>
             </div>}
 
-            <div className={s.wrap} style={{width}}>
+            <div className={s.wrap} style={style}>
 
                 <div className={s.title}>{title}{require && <span>*</span>}</div>
                 <div className={error ? s.error : s.currentOption}

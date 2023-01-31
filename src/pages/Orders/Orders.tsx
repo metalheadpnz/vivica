@@ -9,8 +9,8 @@ import "react-datepicker/dist/react-datepicker.css";
 import "./datePicker.scss"
 import {ReactComponent as Arrows} from "../../assets/images/Arrows2ways.svg";
 import {Table} from "../../components/Table/Table";
-import {Input2 as Input} from "../../components/Input2/Input2";
-import {Select2} from "../../components/Select2/Select";
+import {Input as Input} from "../../components/Input/Input";
+import {Select} from "../../components/Select/Select";
 
 type ChangeDateType = (date: [(Date | null), (Date | null)], event: React.SyntheticEvent<any, Event> | undefined) => void
 
@@ -74,24 +74,24 @@ export const Orders = () => {
                                value={input}/>
                     </div>
                     <div style={{minWidth: '300px', flexGrow: '1'}}>
-                        <Select2 title={'Ordering Provider'}
+                        <Select title={'Ordering Provider'}
                             // style={{minWidth: '300px', flexGrow: '1'}}
-                                 style={{minWidth: '100%'}}
-                                 placeholder={'Placeholder'}
-                                 options={[{name: 'Provider A'}, {name: 'Provider B'}]}
-                                 value={provider}
-                                 onChange={(e) => {
+                                style={{minWidth: '100%'}}
+                                placeholder={'Placeholder'}
+                                options={[{name: 'Provider A'}, {name: 'Provider B'}]}
+                                value={provider}
+                                onChange={(e) => {
                                      setProvider(e.currentTarget.innerText)
                                  }}
                         />
                     </div>
                     <div style={{minWidth: '300px', flexGrow: '1'}}>
-                        <Select2 title={'Status'}
-                                 style={{minWidth: '100%', flexGrow: '1'}}
-                                 placeholder={'Placeholder'}
-                                 options={[{name: 'status1'}, {name: 'status2'}]}
-                                 value={Status}
-                                 onChange={(e) => {
+                        <Select title={'Status'}
+                                style={{minWidth: '100%', flexGrow: '1'}}
+                                placeholder={'Placeholder'}
+                                options={[{name: 'status1'}, {name: 'status2'}]}
+                                value={Status}
+                                onChange={(e) => {
                                      setStatus(e.currentTarget.innerText)
                                  }}
                         />
