@@ -53,7 +53,9 @@ const initialState: CardsStateType = {
 export const cardsSlice = createSlice({
     name: 'cards',
     initialState,
-    reducers: {}
+    reducers: {
+
+    }
 })
 
 export const {} = cardsSlice.actions
