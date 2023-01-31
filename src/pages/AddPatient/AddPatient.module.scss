@@ -22,7 +22,7 @@
 }
 
 .fromLabel {
-  font-family: Raleway-Regular;
+  font-family: Raleway-Regular, serif;
   color: #4B5563;
   font-size: 24px;
   line-height: 28px;
@@ -31,11 +31,13 @@
 
 .breadCrumbs {
   margin-bottom: 16px;
+
   * {
     color: #374151;
     margin-right: 16px;
   }
-  :last-child{
+
+  :last-child {
     color: #999FAB;
   }
 }
@@ -48,5 +50,10 @@
   line-height: 36px;
   font-size: 32px;
   color: #374151;
-  font-family: Raleway-Bold;
+  font-family: Raleway-Bold, serif;
+}
+
+.formBtn {
+  display: flex;
+  justify-content: end;
 }

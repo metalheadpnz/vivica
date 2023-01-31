@@ -3,9 +3,11 @@ import {useNavigate} from "react-router-dom";
 import s from './AddPatient.module.scss'
 import {Input as Input} from "../../components/Input/Input";
 import {ReactComponent as Arrow} from "../../../src/assets/images/arrow.svg";
+import {ReactComponent as CheckMark} from "../../../src/assets/images/checkMark.svg";
 import {useFormik} from "formik";
 import * as Yup from 'yup';
 import {Select} from "../../components/Select/Select";
+import {Button} from "../../components/Button/Button";
 
 const phoneRegExp = /^((\\+[1-9]{1,4}[ \\-]*)|(\\([0-9]{2,3}\\)[ \\-]*)|([0-9]{2,4})[ \\-]*)*?[0-9]{3,4}?[ \\-]*[0-9]{3,4}?$/
 
@@ -139,7 +141,17 @@ export const AddPatient = () => {
         validationSchema: SignupSchema
     })
 
-    const {handleSubmit, setFieldValue, setTouched, touched, errors, values, handleChange, handleBlur} = formik
+    const {
+        handleSubmit,
+        setFieldValue,
+        setTouched,
+        touched,
+        errors,
+        values,
+        handleChange,
+        handleBlur,
+        resetForm
+    } = formik
 
     return (
         <div className={s.wrap}>
@@ -153,36 +165,47 @@ export const AddPatient = () => {
             <div className={s.formWrap}>
                 <div className={s.fromLabel}>Patient Information</div>
 
-                <form onSubmit={handleSubmit} className={s.patientInformation}>
+                <form onSubmit={handleSubmit}>
 
-                    {formFields.map(f => (f.type === 'select')
-                        ?
-                        <Select
-                            options={f.options as any}
-                            error={touched[f.name] && errors[f.name]}
-                            onBlur={() => setTouched({...touched, [f.name]: true})}
-                            onChange={e => setFieldValue(f.name, e.currentTarget.innerText)}
-                            key={f.name}
-                            value={values[f.name]}
-                            placeholder={f.placeholder}
-                            title={f.label}/>
-                        : <Input
-                            style={{marginBottom: '32px', height: '48px',}}
-                            placeholder={f.placeholder}
-                            key={f.name}
-                            label={f.label}
-                            type={f.type}
-                            name={f.name}
-                            value={values[f.name]}
-                            onChange={handleChange}
-                            onBlur={handleBlur}
-                            // error={ (values[f.name] || touched[f.name]) && errors[f.name]}
-                            error={touched[f.name] && errors[f.name]}
-                            require={f.require}
-                        />
-                    )}
-                    <button type='submit'>btn</button>
+                    <div  className={s.patientInformation}>
+                        {formFields.map(f => (f.type === 'select')
+                            ?
+                            <Select
+                                options={f.options as any}
+                                error={touched[f.name] && errors[f.name]}
+                                onBlur={() => setTouched({...touched, [f.name]: true})}
+                                onChange={e => setFieldValue(f.name, e.currentTarget.innerText)}
+                                key={f.name}
+                                value={values[f.name]}
+                                placeholder={f.placeholder}
+                                title={f.label}/>
+                            : <Input
+                                style={{marginBottom: '32px', height: '48px',}}
+                                placeholder={f.placeholder}
+                                key={f.name}
+                                label={f.label}
+                                type={f.type}
+                                name={f.name}
+                                value={values[f.name]}
+                                onChange={handleChange}
+                                onBlur={handleBlur}
+                                // error={ (values[f.name] || touched[f.name]) && errors[f.name]}
+                                error={touched[f.name] && errors[f.name]}
+                                require={f.require}
+                            />
+                        )}
+                    </div>
 
+                    <div className={s.formBtn}>
+                        <Button type={'reset'}
+                                onClick={() => resetForm()}
+                                title={'reset'}
+                                color={"primary"}
+                                variant='outlined'
+                                style={{width: "100px", marginRight: '24px'}}/>
+                        <Button type={'submit'} title={' Add'} frontImg={<CheckMark/>} color={"primary"}
+                                style={{width: "100px"}}/>
+                    </div>
                 </form>
 
             </div>

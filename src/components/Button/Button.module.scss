@@ -24,7 +24,7 @@
   border: 1px solid $Primary;
 
   & svg * {
-    fill: $Primary;
+    //fill: $Primary;
   }
 
   &:hover {
@@ -32,7 +32,7 @@
     border: 1px solid $Primary-dark;
 
     & svg * {
-      fill: $Primary-dark;
+      //fill: $Primary-dark;
     }
   }
 
@@ -41,7 +41,7 @@
     border: 1px solid $Primary-light;
 
     & svg * {
-      fill: $Primary-light;
+      //fill: $Primary-light;
     }
   }
 }
