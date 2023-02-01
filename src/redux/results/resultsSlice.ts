@@ -2,10 +2,12 @@ import {createSlice} from "@reduxjs/toolkit";
 
 type ResultsStateType = {
     value: number
+    data: Array<{ title: string, id: number }>
 }
 
 const initialState: ResultsStateType = {
-    value: 0
+    value: 0,
+    data: []
 }
 
 export const resultsSlice = createSlice({
@@ -20,10 +22,13 @@ export const resultsSlice = createSlice({
         },
         reset: (state) => {
             state.value = 0
+        },
+        setData: (state, action) => {
+             state.data = action.payload
         }
     }
 })
 
-export const {increment, decrement, reset} = resultsSlice.actions
+export const {increment, decrement, reset, setData} = resultsSlice.actions
 
 export default resultsSlice.reducer
